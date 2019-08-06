@@ -7,7 +7,7 @@ day la display san pham
     $data = [];
     while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
         $data[] = array(
-        'sp_id' => $row['sp_id'],
+        'sp_ma' => $row['sp_ma'],
         'sp_ten' => $row['sp_ten'],
         'sp_gia' => $row['sp_gia'],
         'sp_ngaycapnhat' => $row['sp_ngaycapnhat'],
@@ -28,12 +28,14 @@ day la display san pham
 </tr>
     <?php foreach ($data as $row) : ?>
     <tr>
-        <td><?php echo $row['sp_id'];?></td>
+        <td><?php echo $row['sp_ma'];?></td>
         <td><?php echo $row['sp_ten'];?></td>
         <td><?php echo $row['sp_gia'];?></td>
         <td><?php echo $row['sp_ngaycapnhat'];?></td>
         <td><?php echo $row['sp_soluong'];?></td>
+        <td><a href="/sephora/sanpham/updatesp.php?sp_ma=<?php $row['sp_ma']; ?>">Sửa</a></td>
+        <td><a href="/sephora/sanpham/deletesp.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>
     </tr>
 <?php endforeach; ?>
-    
+
 </table>
