@@ -45,18 +45,40 @@ EOT;
     Ngay cap nhat: <input type="text" name="sp_ngaycapnhat" id="sp_ngaycapnhat" > <br>
     So luong: <input type="text" name="sp_soluong" id="sp_soluong" > <br>
     Loai SP: 
-    <select name="lsp_ten" id="lsp_ten"> 
+    <select name="lsp_ma" id="lsp_ma"> 
     <?php foreach ($data as $row) : ?> 
         <option value="<?php echo $row['lsp_ma']; ?>"><?php echo $row['lsp_ten']; ?></option><br>
     <?php endforeach; ?>
-    </select>
+    </select> <br>
 
-    NSX: <select name="nsx_ten" id="nsx_ten"> 
+    NSX: <select name="nsx_ma" id="nsx_ma"> 
     <?php foreach ($dataNSX as $rowNSX) : ?> 
         <option value="<?php echo $rowNSX['nsx_ma']; ?>"><?php echo $rowNSX['nsx_ten']; ?></option><br>
     <?php endforeach; ?>
-    </select>
-    Khuyen mai: <br>
+    </select> <br>
+    
     <input type="submit" name="submitSave" id="submitSave" value="SAVE">
 
 </form>
+
+<?php
+    if (isset($_POST['submitSave'])){
+        $sp_ten=$_POST['sp_ten'];
+        $sp_gia=$_POST['sp_gia'];
+        $sp_giacu=$_POST['sp_giacu'];
+        $sp_ngaycapnhat=$_POST['sp_ngaycapnhat'];
+        $sp_soluong=$_POST['sp_soluong'];
+        $lsp_ma=$_POST['lsp_ma'];
+        $nsx_ma=$_POST['nsx_ma'];
+
+        $sql = <<<EOT
+
+        INSERT INTO sanpham (sp_ten, sp_gia, sp_giacu, sp_ngaycapnhat, sp_soluong, lsp_ma, nsx_ma) 
+        VALUES (N'$sp_ten', $sp_gia, $sp_giacu, NOW(), $sp_soluong, $lsp_ma, $nsx_ma);
+
+EOT;
+    $rs = mysqli_query($conn, $sql);
+
+    }
+
+?>
