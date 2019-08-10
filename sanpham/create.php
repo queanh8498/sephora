@@ -1,12 +1,12 @@
 <?php 
 
 require_once __DIR__ . "/../dbconnect.php";
+
     //HERE DOCS
     $sql = <<<EOT
     SELECT * FROM loaisanpham;
 EOT;
 
-    
 $rs = mysqli_query($conn, $sql);
 
 $data = [];
@@ -58,6 +58,5 @@ EOT;
     </select>
     Khuyen mai: <br>
     <input type="submit" name="submitSave" id="submitSave" value="SAVE">
-
 
 </form>
