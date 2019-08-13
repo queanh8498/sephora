@@ -61,8 +61,8 @@ EOT;
         <td><?php echo $row['lsp_ten'];?></td>
         <td><?php echo $row['nsx_ten'];?></td>
         
-        <td><a href="/sephora/sanpham/editsp.php?sp_ma=<?php $row['sp_ma']; ?>">Sửa</a></td>
-        <!--<td><a href="/sephora/sanpham/deletesp.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>-->
+        <td><a href="/sephora/sanpham/edit.php?sp_ma=<?php $row['sp_ma']; ?>">Sửa</a></td>
+        <td><a href="/sephora/sanpham/delete.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>
         
     </tr>
 <?php endforeach; ?>
