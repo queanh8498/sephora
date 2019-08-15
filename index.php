@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-md-4">ABOUT US</div>
             <div class="col-md-4">NEWS</div>
-            <div class="col-md-4">GOOGLE MAPS</div>
+            <div class="col-md-4"><a href="https://goo.gl/maps/yDeHQ3hkYaf66Wez6"></a></div>
         </div>
     
     </div>
