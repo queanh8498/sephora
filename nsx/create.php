@@ -5,7 +5,7 @@ require_once __DIR__ . "/../dbconnect.php";
 ?>
 
 <form name="frmInsertNSX" id="frmInsertNSX" method="post" action="">
-    Tên nsx: <input type="text" name="nsx_ten" id="nsx_ten" > <br>
+    Tên nsx: <input type="text" name="nsx_ten" id="nsx_ten" class="form-control" > <br>
 
     <input type="submit" name="submitSave" id="submitSave" value="SAVE">
 

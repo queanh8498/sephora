@@ -33,11 +33,12 @@ EOT;
     //die;
 ?>
 
-<table border=1>
+<table class="table table-bodered table-hover">
 <tr>
     <th>Mã </th>
     <th>Tên LSP</th>
     <th>Mô tả</th>
+    <th>Chức năng</th>
     
 </tr>
     <?php foreach ($data as $row) : ?>
@@ -46,14 +47,16 @@ EOT;
         <td><?php echo $row['lsp_ten'];?></td>
         <td><?php echo $row['lsp_mota'];?></td>
         
-        <td><a href="/sephora/loaisp/edit.php?lsp_ma=<?php $row['lsp_ma']; ?>">Sửa</a></td>
-        <!--<td><a href="/sephora/sanpham/deletesp.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>-->
+        <td><a class="btn btn-primary" href="/sephora/loaisp/edit.php?lsp_ma=<?php $row['lsp_ma']; ?>">Sửa</a>
+        <a class="btn btn-danger" href="/sephora/sanpham/delete.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>
         
     </tr>
 <?php endforeach; ?>
 
 </table>
-
+<br>
+    <a href="?page=loaisp_ds" class="btn btn-info">Thêm mới</a>
+<br>
 </body>
 </html>
 

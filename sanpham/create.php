@@ -39,19 +39,19 @@ EOT;
 
 
 <form name="frmInsertSP" id="frmInsertSP" method="post" action="">
-    Ten SP: <input type="text" name="sp_ten" id="sp_ten" > <br>
-    Gia SP<input type="text" name="sp_gia" id="sp_gia" > <br>
-    Gia cu SP: <input type="text" name="sp_giacu" id="sp_giacu" > <br>
-    Ngay cap nhat: <input type="text" name="sp_ngaycapnhat" id="sp_ngaycapnhat" > <br>
-    So luong: <input type="text" name="sp_soluong" id="sp_soluong" > <br>
+    Ten SP: <input type="text" name="sp_ten" id="sp_ten" class="form-control"> <br>
+    Gia SP<input type="text" name="sp_gia" id="sp_gia" class="form-control"> <br>
+    Gia cu SP: <input type="text" name="sp_giacu" id="sp_giacu" class="form-control"> <br>
+    Ngay cap nhat: <input type="text" name="sp_ngaycapnhat" id="sp_ngaycapnhat" class="form-control"> <br>
+    So luong: <input type="text" name="sp_soluong" id="sp_soluong" class="form-control"> <br>
     Loai SP: 
-    <select name="lsp_ma" id="lsp_ma"> 
+    <select name="lsp_ma" id="lsp_ma" class="form-control"> 
     <?php foreach ($data as $row) : ?> 
         <option value="<?php echo $row['lsp_ma']; ?>"><?php echo $row['lsp_ten']; ?></option><br>
     <?php endforeach; ?>
     </select> <br>
 
-    NSX: <select name="nsx_ma" id="nsx_ma"> 
+    NSX: <select name="nsx_ma" id="nsx_ma" class="form-control"> 
     <?php foreach ($dataNSX as $rowNSX) : ?> 
         <option value="<?php echo $rowNSX['nsx_ma']; ?>"><?php echo $rowNSX['nsx_ten']; ?></option><br>
     <?php endforeach; ?>

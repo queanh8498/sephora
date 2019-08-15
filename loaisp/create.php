@@ -5,8 +5,8 @@ require_once __DIR__ . "/../dbconnect.php";
 ?>
 
 <form name="frmInsertLSP" id="frmInsertLSP" method="post" action="">
-    Tên LSP: <input type="text" name="lsp_ten" id="lsp_ten" > <br>
-    Mô tả LSP<input type="text" name="lsp_mota" id="lsp_mota" > <br>
+    Tên LSP: <input type="text" name="lsp_ten" id="lsp_ten" class="form-control"> <br>
+    Mô tả LSP<input type="text" name="lsp_mota" id="lsp_mota" class="form-control"> <br>
     
     <input type="submit" name="submitSave" id="submitSave" value="SAVE">
 

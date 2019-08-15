@@ -56,6 +56,7 @@
   <i class="fas fa-home" style="font-size:24px"></i> 
 
 </div>
+
 </div>
 <!--THANH LOGO - NEW - BRANDS ... -->
 <nav class="navbar navbar-expand-md sticky-top" style="background-color:black;color:white" >

@@ -30,20 +30,21 @@ EOT;
     //print_r($data); 
     //die;
 ?>
-
-<table border=1>
+<br>
+<a href="?page=nsx_ds" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</a>
+<table class="table table-bodered table-hover">
 <tr>
     <th>Mã </th>
     <th>Tên NSX</th>
-    
+    <th>Chức năng</th>
 </tr>
     <?php foreach ($data as $row) : ?>
     <tr>
         <td><?php echo $row['nsx_ma'];?></td>
         <td><?php echo $row['nsx_ten'];?></td>
         
-        <td><a href="/sephora/nsx/edit.php?lsp_ma=<?php $row['nsx_ma']; ?>">Sửa</a></td>
-        <!--<td><a href="/sephora/sanpham/deletesp.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>-->
+        <td><a class="btn btn-primary" href="/sephora/nsx/edit.php?lsp_ma=<?php $row['nsx_ma']; ?>">Sửa</a>
+        <a class="btn btn-danger" href="/sephora/sanpham/delete.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>
         
     </tr>
 <?php endforeach; ?>
