@@ -8,7 +8,7 @@ require_once __DIR__ . "/../dbconnect.php";
     Tên LSP: <input type="text" name="lsp_ten" id="lsp_ten" class="form-control"> <br>
     Mô tả LSP<input type="text" name="lsp_mota" id="lsp_mota" class="form-control"> <br>
     
-    <input type="submit" name="submitSave" id="submitSave" value="SAVE">
+    <input type="submit" name="submitSave" id="submitSave" class="btn btn-primary" value="SAVE">
 
 </form>
 
@@ -22,6 +22,6 @@ require_once __DIR__ . "/../dbconnect.php";
         mysqli_query($conn, $sqlInsert);
         echo 'Lưu thành công!';
         // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-        header('location:display.php');
+        header('location:/sephora?page=loaisp_ds');
     }
     ?>

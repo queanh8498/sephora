@@ -50,6 +50,12 @@
                     include('sanpham/create.php');
                 }else if ($page == 'nsx_them'){
                     include('nsx/create.php');
+                }else if ($page == 'loaisp_xoa'){
+                    include("loaisp/delete.php");
+                }else if ($page == 'sanpham_xoa'){
+                    include('sanpham/delete.php');
+                }else if ($page == 'nsx_them'){
+                    include('nsx/delete.php');
                 }
                 ?>
                 </div>
@@ -59,7 +65,7 @@
         <div class="row">
             <div class="col-md-4">ABOUT US</div>
             <div class="col-md-4">NEWS</div>
-            <div class="col-md-4"><a href="https://goo.gl/maps/yDeHQ3hkYaf66Wez6"></a></div>
+            <div class="col-md-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.055558884043!2d105.75892111404805!3d10.01226969284271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a088352c36316b%3A0x473b92ccd813f37!2zS0RDIDUxNSAoOTEvMjMgY8WpKSwgSMawbmcgTOG7o2ksIE5pbmggS2nhu4F1LCBD4bqnbiBUaMahLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1566034959300!5m2!1svi!2s" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></div>
         </div>
     
     </div>

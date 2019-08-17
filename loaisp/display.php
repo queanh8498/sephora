@@ -48,14 +48,14 @@ EOT;
         <td><?php echo $row['lsp_mota'];?></td>
         
         <td><a class="btn btn-primary" href="/sephora/loaisp/edit.php?lsp_ma=<?php $row['lsp_ma']; ?>">Sửa</a>
-        <a class="btn btn-danger" href="/sephora/sanpham/delete.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>
+        <a class="btn btn-danger" href="/sephora/loaisp/delete.php?sp_ma=<?php $row['lsp_ma']; ?>">Xóa</a></td>
         
     </tr>
 <?php endforeach; ?>
 
 </table>
 <br>
-    <a href="?page=loaisp_ds" class="btn btn-info">Thêm mới</a>
+    <a href="?page=loaisp_them" class="btn btn-info">Thêm mới</a>
 <br>
 </body>
 </html>
