@@ -47,8 +47,10 @@ EOT;
         <td><?php echo $row['lsp_ten'];?></td>
         <td><?php echo $row['lsp_mota'];?></td>
         
-        <td><a class="btn btn-primary" href="/sephora/loaisp/edit.php?lsp_ma=<?php $row['lsp_ma']; ?>">Sửa</a>
-        <a class="btn btn-danger" href="/sephora/loaisp/delete.php?sp_ma=<?php $row['lsp_ma']; ?>">Xóa</a></td>
+        <td><a class="btn btn-primary" href="/sephora?page=loaisp_sua&lsp_ma=<?php echo $row['lsp_ma']; ?>">Sửa</a>
+        <!--<a class="btn btn-danger" href="/sephora?page=loaisp_xoa&lsp_ma=">Xóa</a></td>-->
+        <button class="btn btn-danger btn-delete" data-lsp-ma="<?php echo $row['lsp_ma']; ?>">XÓA</button> <!--button delete la ten button do! -->
+        </td>
         
     </tr>
 <?php endforeach; ?>
