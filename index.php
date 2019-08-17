@@ -86,8 +86,12 @@
     <script src="public/vendor/sweetalert/sweetalert2.all.min.js"></script>
     
     <!--custom script--> 
-    <script src="public/js/loaisp/loaisp.js"></script>
-    
+    <?php if ($page == 'loaisp_ds'){ ?>
+        <script src="public/js/loaisp/loaisp.js"></script>
+    <?php } elseif { 
+         if ($page == 'sanpham_ds'){ ?>
+        <script src="public/js/sanpham/sp.js"></script>
+    <?php } elseif { ?>
 
 </body>
 </html>
