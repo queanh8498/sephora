@@ -9,6 +9,6 @@
     $result= mysqli_query($conn, $sqlDelete);
     //print_r($sanpham);
 
-    header('location:display.php');
+    header('location:/sephora?page=sanpham_ds');
 
 ?>

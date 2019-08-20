@@ -44,7 +44,7 @@ EOT;
         <td><?php echo $row['nsx_ten'];?></td>
         
         <td><a class="btn btn-primary" href="/sephora/nsx/edit.php?lsp_ma=<?php $row['nsx_ma']; ?>">Sửa</a>
-        <a class="btn btn-danger" href="/sephora/sanpham/delete.php?sp_ma=<?php $row['sp_ma']; ?>">Xóa</a></td>
+        <button class="btn btn-danger btn-delete" data-nsx-ma="<?php echo $row['nsx_ma']; ?>">XÓA</button> 
         
     </tr>
 <?php endforeach; ?>

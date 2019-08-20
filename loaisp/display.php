@@ -33,7 +33,7 @@ EOT;
     //die;
 ?>
 
-<table class="table table-bodered table-hover">
+<table class="table table-bordered table-hover">
 <tr>
     <th>Mã </th>
     <th>Tên LSP</th>
@@ -49,7 +49,8 @@ EOT;
         
         <td><a class="btn btn-primary" href="/sephora?page=loaisp_sua&lsp_ma=<?php echo $row['lsp_ma']; ?>">Sửa</a>
         <!--<a class="btn btn-danger" href="/sephora?page=loaisp_xoa&lsp_ma=">Xóa</a></td>-->
-        <button class="btn btn-danger btn-delete" data-lsp-ma="<?php echo $row['lsp_ma']; ?>">XÓA</button> <!--button delete la ten button do! -->
+        <button class="btn btn-danger btn-delete" data-lsp-ma="<?php echo $row['lsp_ma']; ?>">XÓA</button> 
+        <!--button delete la ten button do! -->
         </td>
         
     </tr>
