@@ -31,7 +31,7 @@ EOT;
     //die;
 ?>
 <br>
-<a href="?page=nsx_ds" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</a>
+<a href="?page=nsx_them" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</a>
 <table class="table table-bodered table-hover">
 <tr>
     <th>Mã </th>

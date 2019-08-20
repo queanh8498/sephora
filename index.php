@@ -92,6 +92,30 @@
         <script src="public/js/sp/sp.js"></script>
     <?php } elseif ($page == 'nsx_ds'){ ?>
         <script src="public/js/nsx/nsx.js"></script>
+    <?php } elseif ($page == 'loaisp_them'){ ?>
+        <script src="public/js/loaisp/kt_loaisp.js"></script>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+    <?php } elseif ($page == 'sanpham_them'){ ?>
+        <script src="public/js/sp/kt_sp.js"></script>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+    <?php } elseif ($page == 'nsx_them'){ ?>
+        <script src="public/js/nsx/kt_nsx.js"></script>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+    <?php } elseif ($page == 'loaisp_sua'){ ?>
+        <script src="public/js/loaisp/kt_sua_lsp.js"></script>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+    <?php } elseif ($page == 'sanpham_sua'){ ?>
+        <script src="public/js/loaisp/kt_sua_sp.js"></script>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+    <?php } elseif ($page == 'nsx_sua'){ ?>
+        <script src="public/js/nsx/kt_sua_nsx.js"></script>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
     <?php } ?>
 
 

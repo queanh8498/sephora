@@ -40,7 +40,7 @@ EOT;
     //die;
 ?>
 <br>
-<a href="?page=nsx_ds" class="btn btn-info">Thêm mới</a>
+<a href="?page=sanpham_them" class="btn btn-info">Thêm mới</a>
 <table class="table table-bodered table-hover">
 <tr>
     <th>Mã </th>
