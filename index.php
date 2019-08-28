@@ -24,6 +24,7 @@
                 <div class="col-md-3">
 
                 <ul class="list-group">
+                <li class="list-group-item"><a href="?page=dangky">ĐĂNG KÝ</a></li>
                 <li class="list-group-item"><a href="?page=loaisp_ds">Danh sách Loại sản phẩm</a></li>
                 <li class="list-group-item"><a href="?page=sanpham_ds">Danh sách Sản phẩm</a></li>
                 <li class="list-group-item"><a href="?page=nsx_ds">Danh sách NSX</a></li>
@@ -57,6 +58,8 @@
                     include('sanpham/edit.php');
                 }else if ($page == 'nsx_sua'){
                     include('nsx/edit.php');
+                }else if ($page == 'dangky'){
+                    include('pages/dangky.php');
                 }
                 ?>
                 </div>
