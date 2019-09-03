@@ -10,6 +10,17 @@
 <?php 
 
     require_once __DIR__ . "/../dbconnect.php";
+    
+    //ktra xac thuc tai khoan
+    if(isset($_SESSION['kh_tendangnhap']) && !empty($_SESSION['kh_tendangnhap'])) {
+        // Đã đăng nhập rồi
+        echo 'Đã đăng nhập!';
+    } else {
+        // Chưa đăng nhập
+        echo 'Bạn chưa đăng nhập. Vui lòng <a href="http://localhost:1000/sephora/pages/dangnhap.php">click vào đây</a> để đến trang Đăng nhập';
+        die;
+    }
+
     mysqli_set_charset($conn,"utf-8");
 
     //HERE DOCS

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="public\vendor\font-awesome-4.7.0\css\font-awesome.min.css">
     
 </head>
+<?php
+require_once __DIR__ . "/dbconnect.php";
+?>
 <body>
     <!--CONTAINER-->
     <div class = "container">
@@ -25,6 +28,13 @@
 
                 <ul class="list-group">
                 <li class="list-group-item"><a href="?page=dangky">ĐĂNG KÝ</a></li>
+
+                <?php if(isset($_SESSION['kh_tendangnhap']) && !empty($_SESSION['kh_tendangnhap'])) : ?>
+                        <li class="list-group-item"><a href="/sephora/pages/dangxuat.php">Đăng xuất</a></li>
+                <?php else : ?>
+                        <li class="list-group-item"><a href="?page=dangnhap">Đăng nhập</a></li>
+                <?php endif ?>
+
                 <li class="list-group-item"><a href="?page=loaisp_ds">Danh sách Loại sản phẩm</a></li>
                 <li class="list-group-item"><a href="?page=sanpham_ds">Danh sách Sản phẩm</a></li>
                 <li class="list-group-item"><a href="?page=nsx_ds">Danh sách NSX</a></li>
@@ -60,6 +70,8 @@
                     include('nsx/edit.php');
                 }else if ($page == 'dangky'){
                     include('pages/dangky.php');
+                }else if ($page == 'dangnhap'){
+                    include('pages/dangnhap.php');
                 }
                 ?>
                 </div>
