@@ -17,7 +17,7 @@ Mật khẩu: <input type="password" name="kh_matkhau" id="kh_matkhau" class="fo
 <?php
     if (isset($_POST['btnLuu'])){
         $kh_tendangnhap=$_POST['kh_tendangnhap'];
-        $kh_matkhau= sha1($_POST['kh_matkhau']);
+        $kh_matkhau= ($_POST['kh_matkhau']);
 
         $sql= <<<EOT
         SELECT * FROM khachhang WHERE kh_tendangnhap='$kh_tendangnhap' AND kh_matkhau='$kh_matkhau';

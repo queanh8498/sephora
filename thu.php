@@ -40,13 +40,23 @@
 
 </head>
 <body>
+<a class ="nav-link dropdown-toggle" href="pages/dangnhap.php" data-toggle="dropdown">
+      <i class="fa fa-user" aria-hidden="true" style="font-size:16px"></i>
+  </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="pages/dangnhap.php">Đăng nhập</a>
+        <a class="dropdown-item" href="pages/dangky.php">Đăng ký</a>
+      </div>
 
 <div class="text-center" style="margin-top:10px;margin-bottom:10px">
+
   <h2>S E P H O R A</h2>
   <p>Paradise belongs to a half of the whole world</p>
 
 <!--ICON-->
   <div class="text-right" style="margin-right:20px; margin-bottom:15px"> 
+  
+  &nbsp;&nbsp;
   <i class="far fa-heart ml-auto " style="font-size:24px"></i>
   &nbsp;&nbsp;
   <i class="fab fa-facebook-f" style="font-size:24px"></i>
@@ -55,6 +65,7 @@
   &nbsp;&nbsp;
   <i class="fas fa-home" style="font-size:24px"></i> 
 
+  
 </div>
 
 </div>
