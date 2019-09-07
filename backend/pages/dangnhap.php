@@ -31,7 +31,7 @@ EOT;
         echo 'Dang nhap khong thanh cong. Vui long kiem tra lai nhe !';
     }else {
         echo 'Dang nhap thanh cong roi neeee !!!';
-        header('location:../index.php');
+        header('location:/../index.php');
 
 
         //luu session

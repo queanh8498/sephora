@@ -67,7 +67,7 @@ EOT;
 
     }
 
-
+/*
     // Gởi mail kích hoạt tài khoản
     $mail = new PHPMailer(true);                               // Passing `true` enables exceptions
     try {
@@ -136,5 +136,5 @@ EOT;
     } catch (Exception $e) {
         echo 'Lỗi khi gởi mail: ', $mail->ErrorInfo;
     }
-
+    */
 ?>

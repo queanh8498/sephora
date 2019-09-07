@@ -17,7 +17,7 @@ $khachhangRow = mysqli_fetch_array($rs, MYSQLI_ASSOC); // 1 record
         // Tìm được dòng khách hàng cần cập nhật
         $sqlUpdate = "UPDATE khachhang SET kh_trangthai = 1 WHERE kh_tendangnhap = '$kh_tendangnhap'";
         $resultUpdate = mysqli_query($conn, $sqlUpdate);
-        echo 'Tài khoản đã được kích hoạt. Click vào <a href="http://localhost:1000/sephora/loaisp/display.php">ĐÂY</a> để đến trang chủ!';
+        echo 'Tài khoản đã được kích hoạt. Click vào <a href="http://localhost:1000/sephora/backend/loaisp/display.php">ĐÂY</a> để đến trang chủ!';
     }
 
 ?>

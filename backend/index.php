@@ -1,3 +1,4 @@
+<!--stcky sidebar-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +31,7 @@ require_once __DIR__ . "/../dbconnect.php";
                 <li class="list-group-item"><a href="?page=dangky">ĐĂNG KÝ</a></li>
 
                 <?php if(isset($_SESSION['kh_tendangnhap']) && !empty($_SESSION['kh_tendangnhap'])) : ?>
-                        <li class="list-group-item"><a href="/sephora/pages/dangxuat.php">Đăng xuất</a></li>
+                        <li class="list-group-item"><a href="/sephora/backend/pages/dangxuat.php">Đăng xuất</a></li>
                 <?php else : ?>
                         <li class="list-group-item"><a href="?page=dangnhap">Đăng nhập</a></li>
                 <?php endif ?>
