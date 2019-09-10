@@ -6,7 +6,81 @@ Trang chu
 {% endblock %}
 
 {# Nội dung trong block content #}
-{% block content %} <!-- duc lo nay o ben layout.html.twig -->
-<h1>Day la trang chu</h1>
+{% block content %} 
+<!-- duc lo nay o ben layout.html.twig -->
+<!--BĂNG CHUYỀN CAROUSEL-->
+<div id="bangchuyen" class="carousel slide" data-ride="carousel" style="width:100%; display:block; margin-right:auto;margin-left:auto">
+  <!--căn giữa các hình trong băng chuyền để vừa trong 2 cái CONTROL-->
+  <!--3 DẤU GẠCH -->
+  <ul class="carousel-indicators">
+    <li data-target="#bangchuyen" data-slide-to="0" class="active"></li>
+    <li data-target="#bangchuyen" data-slide-to="1"></li>
+  </ul>
+  <!--THÊM HÌNH-->
+  <div class="carousel-inner" >
+    <div class="carousel-item active">
+      <img src="\sephora\vendor\img\horizon3.jpg" alt="" >
+    </div>
+    <div class="carousel-item">
+      <img src="\sephora\vendor\img\horizon1.jpg"alt="" >
+    </div>
+  </div>
+  <!--MŨI TÊN CONTROL TRÁI PHẢI -->
+  <a class="carousel-control-prev" href="#bangchuyen" data-slide="prev" >
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#bangchuyen" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<br>
+<div class="marketing">
+    <div class="row" align="center">
+      <div class="col-lg-6">
+        <img src="\sephora\backend\assets\makeup.jpg" alt="" width="300" height="300">
+        <h3>Makeup</h3>
+        <p>Sephora is the paradisse if you're looking for best makeup</p>
+      </div>
+  
+      <div class="col-lg-6">
+      <img src="\sephora\backend\assets\hair.jpg" alt="" width="300" height="300">
+      <h3>Hair Care</h3>
+      <p>Sephora provides all you need to cleanse, style & treat any hair style</p>
+      </div>
+    
+</div>
+<!-- Danh sách sản phẩm -->
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Danh sách Sản phẩm</h1>
+        <p class="lead text-muted">Các sản phẩm với chất lượng, uy tín, cam kết từ nhà Sản xuất, phân phối và bảo hành
+            chính hãng.</p>
+    </div>
+</section>
+
+<div class="danhsachsanpham">
+    <div class="container">
+        <div class="row">
+            {% for sanpham in danhsachsanpham %}
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    {% if sanpham.hsp_tentaptin %}
+                    <img src="/sephora/public/uploadfile/{{ sanpham.hsp_tentaptin }}" class="card-img-top" alt="...">
+                    {% else %}
+                    <img src="/sephora/vendor/img/no_img.img" class="card-img-top" alt="...">
+                    {% endif %}
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ sanpham.sp_ten }}</h5>
+                        <p class="card-text">{{ sanpham.sp_mota_ngan }}</p>
+                        <a href="#" class="btn btn-primary">Mua hàng</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
+
 {# End Nội dung trong block content #}

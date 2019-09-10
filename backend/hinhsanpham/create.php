@@ -39,7 +39,7 @@ if(isset($_POST['submitSave'])){
 
     $sp_ma = $_POST['sp_ma'];
 
-    $upload_dir = "./../public/uploadfile/";
+    $upload_dir = "./../../public/uploadfile/";
     
 
     if($_FILES['hsp']['error'] > 0 ){
