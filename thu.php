@@ -10,99 +10,101 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <style>
-  .carousel-inner img{
-    width: 800px;
-    height: 500px;
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
-    
-    /*3 dong cuối là căn giữa hinh anh. nhớ nhé !!! */
-  }
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="./public/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="./public\vendor\font-awesome-4.7.0\css\font-awesome.min.css">
   
-  .nav-item a{
-    background-color:black;
-    color:white;
-  }
-  
-  .dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.thumbnails img{
-  margin-left:auto;
-  margin-right:auto;
-  display:block;
-  
-}
-  </style>
-
 </head>
+
 <body>
-<a class ="nav-link dropdown-toggle" href="pages/dangnhap.php" data-toggle="dropdown">
-      <i class="fa fa-user" aria-hidden="true" style="font-size:16px"></i>
-  </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="pages/dangnhap.php">Đăng nhập</a>
-        <a class="dropdown-item" href="pages/dangky.php">Đăng ký</a>
-      </div>
 
-<div class="text-center" style="margin-top:10px;margin-bottom:10px">
+<div class="header">
 
-  <h2>S E P H O R A</h2>
-  <p>Paradise belongs to a half of the whole world</p>
-
-<!--ICON-->
-  <div class="text-right" style="margin-right:20px; margin-bottom:15px"> 
-  
-  &nbsp;&nbsp;
-  <i class="far fa-heart ml-auto " style="font-size:24px"></i>
-  &nbsp;&nbsp;
-  <i class="fab fa-facebook-f" style="font-size:24px"></i>
-  &nbsp;&nbsp;
-  <i class="fa fa-cart-plus" style="font-size:24px"></i>
-  &nbsp;&nbsp;
-  <i class="fas fa-home" style="font-size:24px"></i> 
-
-  
-</div>
-
-</div>
-<!--THANH LOGO - NEW - BRANDS ... -->
-<nav class="navbar navbar-expand-md sticky-top" style="background-color:black;color:white" >
-  <!--Brand-->
-  <a class="navbar-brand" href="#" style="background-color:black;color:white">LOGO</a>
-
-  <!-- Links-->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class ="nav-link" href="#">New</a>
-    </li>
-    <li class="nav-item">
-      <a class ="nav-link" href="#">Brands</a>
-    </li>
+  <div class="container-wrapper">
+    <div class="container text-center">
+      <br>
+      <h2>S E P H O R A</h2>
+      <p>Paradise belongs to a half of the whole world</p>
     
-    <li class="nav-item">
-      <a class ="nav-link" href="#">Contact</a>
-    </li>
-    <!--THANH THẢ XUỐNG-->
+      <div class="container-form-search">
+        <form id="form-search" action="" class="ng-pristine ng-valid">
+          <div class="input-search">
+          <input type="text" data-ng-model="textSearch" auto-complete placeholder="Tìm kiếm sản phẩm..." id="input-search" class="ng-pristine ng-untouched ng-valid ui-autocomplete-input" autocomplete="off">
+          <span class="fa fa-search"></span>
+          </div><!--close input-search-->
+        </form>
+      </div><!--close container-form-search-->
+    </div><!--close "container text-center-->
+  </div><!--close container-wrapper-->
+<!--
+
+  <a class ="nav-link dropdown-toggle" data-toggle="dropdown">
     <li class="nav-item dropdown">
-      <a class ="nav-link dropdown-toggle" href="#" data-toggle="dropdown">About Beauty</a>
+      <a class ="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true" style="font-size:16px"></i></a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Fashion Trends</a>
-        <a class="dropdown-item" href="#">Makeup Trends</a>
-        <a class="dropdown-item" href="#">Skincare</a>
+        <a class="dropdown-item" href="#">Đăng nhập</a>
+        <a class="dropdown-item" href="#">Đăng ký</a>
     </li>
-  </ul>
+</a>
+-->
+<!--ICON-->
+  <div class="text-right"> 
+    <i class="fa fa-user-circle-o" style="font-size:24px"></i>
+    &nbsp;&nbsp;
+    <i class="far fa-heart ml-auto " style="font-size:24px"></i>
+    &nbsp;&nbsp;
+    <i class="fab fa-facebook-f" style="font-size:24px"></i>
+    &nbsp;&nbsp;
+    <i class="fa fa-cart-plus" style="font-size:24px"></i>
+    &nbsp;&nbsp;
+  </div>
+
+<!--THANH LOGO - NEW - BRANDS ... -->
+  <nav class="navbar navbar-expand-md sticky-top" style="background-color:white;color:black" >
+    <!--Brand-->
+    <div class="container justify-content-center">
+      <nav class="stroke">
+      <!--<a class="navbar-brand" href="#" style="background-color:white;color:black">LOGO</a>-->
+      <!-- Links-->
+        <ul class="navbar-nav" >
+          <li class="nav-item">
+            <a class ="nav-link" href="#"><i class="fas fa-home" style="font-size:20px"></i> &nbsp;HOME</a>
+          </li>
+          <li class="nav-item">
+              <a class ="nav-link" href="#">&nbsp;SIGN IN</a>
+          </li>
+          <li class="nav-item">
+            <a class ="nav-link" href="#">NEW</a>
+          </li>
+          <li class="nav-item">
+            <a class ="nav-link" href="#">BRANDS</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class ="nav-link" href="#">CONTACT</a>
+          </li>
+      <!--THANH THẢ XUỐNG-->
+          <li class="nav-item dropdown">
+            <a class ="nav-link dropdown-toggle" href="#" data-toggle="dropdown">ABOUT BEAUTY</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Fashion Trends</a>
+              <a class="dropdown-item" href="#">Makeup Trends</a>
+              <a class="dropdown-item" href="#">Skincare</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </nav>
+  <!--FORM SEARCH
   <form class="form-inline ml-auto" action="/action_page.php" align-items-end >
     <input class="form-control mr-sm-2"  type="text" placeholder="Search for something...">
     <button type="button" class="btn btn-danger" type="submit">Search</button>
     &nbsp;&nbsp;
    
   </form> 
-</nav>
-
+--> 
+</div>
 <hr>
 
 <div class="container">

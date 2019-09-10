@@ -1,0 +1,64 @@
+.dropdown:hover>.dropdown-menu{
+    display:block;
+}
+
+.input-search input{
+    width: 500px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.dropdown-menu {
+    float: left; 
+    width: 70%; }
+
+  .carousel-inner img{
+    width: 800px;
+    height: 500px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    
+    /*3 dong cuối là căn giữa hinh anh. nhớ nhé !!! */
+  }
+nav.stroke ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+  .nav-item a{
+    background-color:white;
+    color:black;
+    margin-right:70px;
+    font-family: Georgia;
+    font-size: 18px;
+  }
+  
+.dropdown .dropdown-item:hover {
+    display: block;
+    background-color:salmon;
+}
+
+.thumbnails img{
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  
+}
+ 
