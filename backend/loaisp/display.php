@@ -17,7 +17,7 @@
         echo 'Đã đăng nhập!';
     } else {
         // Chưa đăng nhập
-        echo 'Bạn chưa đăng nhập. Vui lòng <a href="http://localhost:1000/sephora/pages/dangnhap.php">click vào đây</a> để đến trang Đăng nhập';
+        echo 'Bạn chưa đăng nhập. Vui lòng <a href="/sephora/backend/pages/dangnhap.php">click vào đây</a> để đến trang Đăng nhập';
         die;
     }
 

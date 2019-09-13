@@ -62,12 +62,12 @@ Trang chu
     <div class="container">
         <div class="row">
             {% for sanpham in danhsachsanpham %}
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-4" style="padding: 20px">
+                <div class="card" style="width: 18rem;height: 460px;">
                     {% if sanpham.hsp_tentaptin %}
                     <img src="/sephora/public/uploadfile/{{ sanpham.hsp_tentaptin }}" class="card-img-top" alt="...">
                     {% else %}
-                    <img src="/sephora/vendor/img/no_img.img" class="card-img-top" alt="...">
+                    <img src="/sephora/vendor/img/no_img.jpg" class="card-img-top" alt="...">
                     {% endif %}
 
                     <div class="card-body">

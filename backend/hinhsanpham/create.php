@@ -22,7 +22,7 @@ while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
 ?>
 
 <form name="frmhinhSP" id="frmhinhSP" method="post" action="" enctype="multipart/form-data">
-    Chọn File: <input type="file" name="hsp" id="hsp"> <br><br>
+    Chọn File: <input type="file" name="hsp_tentaptin" id="hsp_tentaptin"> <br><br>
     
     Sản phẩm <select name="sp_ma" id="sp_ma"> 
     <?php foreach ($data as $row) : ?> 
@@ -30,7 +30,7 @@ while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
     <?php endforeach; ?>
     </select> <br><br>
     
-    <input type="submit" name="submitSave" id="submitSave" value="SAVE">
+    <input type="submit" name="submitSave" id="submitSave" class="btn btn-primary" value="HOÀN TÂT">
 
 </form>
 
@@ -39,20 +39,22 @@ if(isset($_POST['submitSave'])){
 
     $sp_ma = $_POST['sp_ma'];
 
-    $upload_dir = "./../../public/uploadfile/";
+    $upload_dir = './../../public/uploadfile/';
     
-
-    if($_FILES['hsp']['error'] > 0 ){
+    if($_FILES['hsp_tentaptin']['error'] > 0 ){
         echo 'Lỗi load file !'; die;
     }else{
-        $hsp = $_FILES['hsp']['name'];
+        $hsp_tentaptin = $_FILES['hsp_tentaptin']['name'];
         //print_r($hsp);die;
-        move_uploaded_file($_FILES['hsp']['tmp_name'], $upload_dir.$hsp);
+        move_uploaded_file($_FILES['hsp_tentaptin']['tmp_name'], $upload_dir.$hsp_tentaptin);
         echo 'Upload Thành công !';
     }
 
-    $sqlInsert = "INSERT INTO hinhsanpham (hsp_tentaptin, sp_ma) VALUES ('$hsp', '$sp_ma');";
+    $sqlInsert = "INSERT INTO hinhsanpham (hsp_tentaptin, sp_ma) VALUES ('$hsp_tentaptin', $sp_ma);";
     $rs = mysqli_query($conn, $sqlInsert);
+    //print_r($rs);die;
+    header('location:/sephora/backend/index.php?page=hinhsp_ds');
 
 }
 ?>
+

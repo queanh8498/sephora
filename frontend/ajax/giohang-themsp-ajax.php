@@ -37,5 +37,4 @@ if (isset($_SESSION['giohangdata'])) {
     $_SESSION['giohangdata'] = $data;
 }
 echo json_encode($_SESSION['giohangdata']);
-© 2019 GitHub, Inc.
 

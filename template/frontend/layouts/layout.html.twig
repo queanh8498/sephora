@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="/sephora/public/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
   <!-- Font awesome -->
-  <link rel="stylesheet" href="/sephora/public/vendor/font-awesome-4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/sephora/public/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css"/>
 
   <!-- Custom css - Các file css do chúng ta tự viết -->
 
@@ -21,6 +21,11 @@
    {% endblock %}
 
 </title>
+
+<!-- Block custom-styles - Đục lỗ trên giao diện bố cục chung, đặt tên là `custom-styles` -->
+{% block customstyles %}
+{% endblock %}
+<!-- End block custom-styles -->
   
 </head>
 
@@ -29,12 +34,12 @@
   {{ include('frontend/layouts/includes/header.html.twig') }}
   <!-- end header-->
 
-  <main role="main">
-   <!-- Block content - Đục lỗ (placeholder) trên giao diện bố cục chung, đặt tên là `content` -->
-   {% block content %}
-   {% endblock %}
-   <!-- End block content -->
-  </main>
+  <main role="main" class="content-wrapper">
+    <!-- Block content - Đục lỗ (placeholder) trên giao diện bố cục chung, đặt tên là `content` -->
+    {% block content %}
+    {% endblock %}
+    <!-- End block content -->
+</main>
 
   <!-- footer-->
   {{ include('frontend/layouts/includes/footer.html.twig') }}
@@ -42,12 +47,18 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="/sephora//public/vendor/jquery/jquery.min.js"></script>
-  <script src="/sephora//public/vendor/popperjs/popper.min.js"></script>
-  <script src="/sephora//public/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/sephora/public/vendor/jquery/jquery.min.js"></script>
+  <script src="/sephora/public/vendor/popperjs/popper.min.js"></script>
+  <script src="/sephora/public/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  <!-- Custom script - Các file js do mình tự viết -->
-  <script src="/sephora//public/frontend/js/app.js"></script>
+  <!-- Custom script - Các file js do mình tự viết 
+  <script src="/sephora/public/frontend/js/app.js"></script>
+  -->
+
+  <!-- Block custom-scripts - Đục lỗ trên giao diện bố cục chung, đặt tên là `custom-scripts` -->
+  {% block customscripts %}
+  {% endblock %}
+  <!-- End block custom-scripts -->
 </body>
 
 </html>

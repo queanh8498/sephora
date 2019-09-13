@@ -18,8 +18,8 @@ $result = mysqli_query($conn, $sqlDanhSachSanPham);
 // 4. Khi thực thi các truy vấn dạng SELECT, dữ liệu lấy về cần phải phân tích để sử dụng
 // Thông thường, chúng ta sẽ sử dụng vòng lặp while để duyệt danh sách các dòng dữ liệu được SELECT
 // Ta sẽ tạo 1 mảng array để chứa các dữ liệu được trả về
-$dataDanhSachSanPham = [];
-while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+    $dataDanhSachSanPham = [];
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 {
     $dataDanhSachSanPham[] = array(
         'sp_ma' => $row['sp_ma'],

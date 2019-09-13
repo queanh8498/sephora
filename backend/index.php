@@ -39,6 +39,7 @@ require_once __DIR__ . "/../dbconnect.php";
                 <li class="list-group-item"><a href="?page=loaisp_ds">Danh sách Loại sản phẩm</a></li>
                 <li class="list-group-item"><a href="?page=sanpham_ds">Danh sách Sản phẩm</a></li>
                 <li class="list-group-item"><a href="?page=nsx_ds">Danh sách NSX</a></li>
+                <li class="list-group-item"><a href="?page=hinhsp_ds">Danh sách Hình sản phẩm</a></li>
                 </ul>
 
                 </div>
@@ -73,6 +74,10 @@ require_once __DIR__ . "/../dbconnect.php";
                     include('pages/dangky.php');
                 }else if ($page == 'dangnhap'){
                     include('pages/dangnhap.php');
+                }else if ($page == 'hinhsp_ds'){
+                    include('hinhsanpham/display.php');
+                }else if ($page == 'hinhsp_them'){
+                    include('hinhsanpham/create.php');
                 }
                 ?>
                 </div>
@@ -90,7 +95,7 @@ require_once __DIR__ . "/../dbconnect.php";
 
 
     <!--jquery-->
-    <script src="./../public/vendor/jquery/jquery.js"></script>
+    <script src="./../public/vendor/jquery/jquery.min.js"></script>
 
     <!--popper-->
     <script src="./../public/vendor/popperjs/popper.min.js"></script>

@@ -15,9 +15,9 @@
 
     //HERE DOCS
     $sql = <<<EOT
-    SELECT sp.sp_ma,sp.sp_ten, sp.sp_gia, hsp.hsp_tentaptin
-    FROM sanpham sp
-    JOIN hinhsanpham hsp ON hsp.sp_ma=sp.sp_ma;
+    SELECT sp.sp_ma,sp.sp_ten, sp.sp_gia, hsp.hsp_ma, hsp.hsp_tentaptin
+    FROM hinhsanpham hsp
+    JOIN sanpham sp ON hsp.sp_ma=sp.sp_ma;
 EOT;
 
     $rs = mysqli_query($conn, $sql);
@@ -26,6 +26,7 @@ EOT;
     while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
         $data[] = array(
         'sp_ma' => $row['sp_ma'],
+        'hsp_ma' => $row['hsp_ma'],
         'sp_ten' => $row['sp_ten'],
         'sp_gia' => $row['sp_gia'],
         'hsp_tentaptin' => $row['hsp_tentaptin'],
@@ -51,7 +52,7 @@ EOT;
         <td><?php echo $row['sp_ten'];?></td>
         <td><?php echo $row['sp_gia'];?></td>
         <td>
-        <img src="/sephora/public/uploadfile/<?= $row['hsp_tentaptin']; ?>">
+        <img src="/sephora/public/uploadfile/<?= $row['hsp_tentaptin']; ?>" class="img-thumbnail">
         </td>
         
         <td><a class="btn btn-primary" href="/sephora/hinhsanpham/edit.php?sp_ma=<?php $row['sp_ma']; ?>">Sửa</a>
@@ -60,6 +61,8 @@ EOT;
 <?php endforeach; ?>
 
 </table>
+
+<a href="/sephora/backend/index.php?page=hinhsp_them" class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Hình SẢN PHẨM </a> 
 
 </body>
 </html>
