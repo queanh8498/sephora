@@ -292,7 +292,7 @@ Sản phẩm {{ sanpham.sp_ten }}
                         </h5>
                         <div class="form-group">
                             <label for="soluong">Số lượng đặt mua:</label>
-                            <input type="number" class="form-control" id="soluong" name="soluong">
+                            <input type="number" class="form-control" id="sp_soluong" name="sp_soluong">
                         </div>
                         <div class="action">
                             <a class="add-to-cart btn btn-default" id="btnThemVaoGioHang">Thêm vào giỏ hàng</a>
@@ -330,7 +330,7 @@ Sản phẩm {{ sanpham.sp_ten }}
             sp_ten: $('#sp_ten').val(), //Samsung
             sp_gia: $('#sp_gia').val(), //12000000.00
             hinhdaidien: $('#hinhdaidien').val(), //2047_tinh-yeu-ngot-ngao.jpg
-            soluong: $('#soluong').val(), // 3
+            sp_soluong: $('#sp_soluong').val(), // 3
         };
         //console.log((dulieugoi));
         // Gởi dữ liệu đi (sử dụng JQUERY AJAX)
@@ -342,7 +342,7 @@ Sản phẩm {{ sanpham.sp_ten }}
             success: function (data) {
                 console.log(data);
                 var htmlString =
-                    `Sản phẩm đã được thêm vào Giỏ hàng. <a href="#">Xem Giỏ hàng</a>.`;
+                    `Sản phẩm đã được thêm vào Giỏ hàng. <a href="/sephora/frontend/thanhtoan/giohang.php">Xem Giỏ hàng</a>.`;
                 $('#thongbao').html(htmlString);
                 // Hiện thông báo
                 $('.alert').removeClass('d-none').addClass('show');

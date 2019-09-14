@@ -7,9 +7,12 @@ include_once(__DIR__ . '/../../dbconnect.php');
 // Lấy thông tin người dùng gởi đến
 $sp_ma = $_POST['sp_ma'];
 $sp_ten = $_POST['sp_ten'];
-$soluong = $_POST['soluong'];
-$gia = $_POST['sp_gia'];
+$sp_soluong = $_POST['sp_soluong'];
+$sp_gia = $_POST['sp_gia'];
 $hinhdaidien = $_POST['hinhdaidien'];
+// var_dump($sp_ma);
+// var_dump($sp_ten);die;
+//var_dump($hinhdaidien);die;
 // Lưu trữ giỏ hàng trong session
 // Nếu khách hàng đặt hàng cùng sản phẩm đã có trong giỏ hàng => cập nhật lại Số lượng, Thành tiền
 if (isset($_SESSION['giohangdata'])) {
@@ -17,9 +20,9 @@ if (isset($_SESSION['giohangdata'])) {
     $data[$sp_ma] = array(
         'sp_ma' => $sp_ma,
         'sp_ten' => $sp_ten,
-        'soluong' => $soluong,
-        'gia' => $gia,
-        'thanhtien' => ($soluong * $gia),
+        'sp_soluong' => $sp_soluong,
+        'sp_gia' => $sp_gia,
+        'thanhtien' => ($sp_soluong * $sp_gia),
         'hinhdaidien' => $hinhdaidien
     );
     // lưu dữ liệu giỏ hàng vào session
@@ -28,9 +31,9 @@ if (isset($_SESSION['giohangdata'])) {
     $data[$sp_ma] = array(
         'sp_ma' => $sp_ma,
         'sp_ten' => $sp_ten,
-        'soluong' => $soluong,
-        'gia' => $gia,
-        'thanhtien' => ($soluong * $gia),
+        'sp_soluong' => $sp_soluong,
+        'sp_gia' => $sp_gia,
+        'thanhtien' => ($sp_soluong * $sp_gia),
         'hinhdaidien' => $hinhdaidien
     );
     // lưu dữ liệu giỏ hàng vào session
