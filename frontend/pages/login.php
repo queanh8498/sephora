@@ -11,7 +11,7 @@ if(isset($_POST['btnDangNhap']))
 {
     // Lấy dữ liệu người dùng hiệu chỉnh gởi từ REQUEST POST
     $username = $_POST['username'];
-    $password = sha1($_POST['password']);
+    $password = ($_POST['password']);
     // Câu lệnh SELECT
     $sql = "SELECT * FROM `khachhang` WHERE kh_tendangnhap = '$username' AND kh_matkhau = '$password';";
     // Thực thi SELECT
@@ -43,8 +43,8 @@ if(isset($_POST['btnDangNhap']))
     // Đóng kết nối
     mysqli_close($conn);
 }
+
 // Nếu trong SESSION có giá trị của key 'username' <-> người dùng đã đăng nhập thành công
-// Điều hướng người dùng về trang DASHBOARD
 if(isset($_SESSION['username'])) {
     // echo "<h1>Xin chào mừng ". $_SESSION['username'] ."</h1>";
     // echo session_save_path();

@@ -25,7 +25,6 @@ EOT;
     $data = [];
     while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
         $data[] = array(
-        'sp_ma' => $row['sp_ma'],
         'hsp_ma' => $row['hsp_ma'],
         'sp_ten' => $row['sp_ten'],
         'sp_gia' => $row['sp_gia'],
@@ -39,31 +38,33 @@ EOT;
 
 <table class="table table-bodered table-hover">
 <tr>
-    <th>Mã </th>
+    <th>Mã hình</th>
     <th>Tên SP</th>
     <th>Gía</th>
     <th>Hình SP </th>
     <th>Chức năng</th>
     
 </tr>
-    <?php foreach ($data as $row) : ?>
+    <?php foreach ($data as $rowSP) : ?>
     <tr>
-        <td><?php echo $row['sp_ma'];?></td>
-        <td><?php echo $row['sp_ten'];?></td>
-        <td><?php echo $row['sp_gia'];?></td>
-        <td>
-        <img src="/sephora/public/uploadfile/<?= $row['hsp_tentaptin']; ?>" class="img-thumbnail">
-        </td>
+        <td><?php echo $rowSP['hsp_ma'];?></td>
+        <td><?php echo $rowSP['sp_ten'];?></td>
+        <td><?php echo $rowSP['sp_gia'];?></td>
         
-        <td><a class="btn btn-primary" href="/sephora/hinhsanpham/edit.php?sp_ma=<?php $row['sp_ma']; ?>">Sửa</a>
-        <button class="btn btn-danger btn-delete" data-sp-ma="<?php echo $row['sp_ma']; ?>">XÓA</button>        
+        <td>
+        <img src="/sephora/uploads/<?= $rowSP['hsp_tentaptin']; ?>" class="img-thumbnail">
+        </td>
+
+        
+        <td><a class="btn btn-primary" href="/sephora/hinhsanpham/edit.php?hsp_ma=<?php $rowSP['hsp_ma']; ?>">Sửa</a>
+        <button class="btn btn-danger btn-delete" data-hsp-ma="<?php echo $rowSP['hsp_ma']; ?>">XÓA</button>       
+        </td> 
     </tr>
 <?php endforeach; ?>
-
 </table>
 
-<a href="/sephora/backend/index.php?page=hinhsp_them" class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Hình SẢN PHẨM </a> 
-
+<a href="/sephora/backend/index.php?page=hinhsp_them" class="btn btn-primary">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Hình SẢN PHẨM 
+</a> 
 </body>
 </html>
-

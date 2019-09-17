@@ -60,9 +60,9 @@ Giỏ hàng
                             {% endif %}
                         </td>
                         <td>{{ sanpham.sp_ten }}</td>
-                        <td>{{ sanpham.sp_soluong }}</td>
-                        <td>{{ sanpham.sp_gia }}</td>
-                        <td>{{ sanpham.sp_soluong * sanpham.sp_gia }}</td>
+                        <td>{{ sanpham.soluong }}</td>
+                        <td>{{ sanpham.gia }}</td>
+                        <td>{{ sanpham.soluong * sanpham.gia }}</td>
                         <td>
                             <!-- Nút xóa, bấm vào sẽ xóa thông tin dựa vào khóa chính `sp_ma` -->
                             <a id="delete_{{ loop.index }}" data-sp-ma="{{ sanpham.sp_ma }}" class="btn btn-danger btn-delete-sanpham">

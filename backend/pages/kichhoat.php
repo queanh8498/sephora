@@ -4,9 +4,9 @@ require_once __DIR__ . "/../../dbconnect.php";
 
 
 $kh_tendangnhap=$_GET['$kh_tendangnhap'];
-$kh_makichhoat=$_GET['$kh_makichhoat'];
+$kh_trangthai=$_GET['kh_trangthai'];
 
-$sqlSelect="SELECT * FROM khachhang WHERE kh_tendangnhap='$kh_tendangnhap' AND kh_makichhoat='$kh_makichhoat';";
+$sqlSelect="SELECT * FROM khachhang WHERE kh_tendangnhap='$kh_tendangnhap' AND kh_trangthai='$kh_trangthai';";
 
 $rs= mysqli_query($conn, $sqlSelect);
 $khachhangRow = mysqli_fetch_array($rs, MYSQLI_ASSOC); // 1 record
@@ -17,7 +17,7 @@ $khachhangRow = mysqli_fetch_array($rs, MYSQLI_ASSOC); // 1 record
         // Tìm được dòng khách hàng cần cập nhật
         $sqlUpdate = "UPDATE khachhang SET kh_trangthai = 1 WHERE kh_tendangnhap = '$kh_tendangnhap'";
         $resultUpdate = mysqli_query($conn, $sqlUpdate);
-        echo 'Tài khoản đã được kích hoạt. Click vào <a href="http://localhost:1000/sephora/backend/loaisp/display.php">ĐÂY</a> để đến trang chủ!';
+        echo 'Tài khoản đã được kích hoạt. Click vào <a href="/sephora/backend/loaisp/display.php">ĐÂY</a> để đến trang chủ!';
     }
 
 ?>
