@@ -52,6 +52,6 @@ if(isset($_SESSION['username'])) {
 }
 else {
     // Yêu cầu `Twig` vẽ giao diện được viết trong file `frontend/pages/login.html.twig`
-    // với dữ liệu truyền vào file giao diện được đặt tên là `login`
-    echo $twig->render('frontend/pages/login.html.twig', ['message' => $message]);
+    // với dữ liệu truyền vào file giao diện được  đặt tên là `login`
+    echo $twig->render('frontend/pages/login1.html.twig', ['message' => $message]);
 }
