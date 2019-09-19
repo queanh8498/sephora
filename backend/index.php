@@ -9,10 +9,15 @@
 
     <link rel="stylesheet" href="./../public/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="./../public\vendor\font-awesome-4.7.0\css\font-awesome.min.css">
-    
+
+    <?php if($page == 'dashboard') { ?>
+        <link rel="stylesheet" href="./../public/vendor/Chart.js/Chart.min.css">
+    <?php } ?>
 </head>
 <?php
 require_once __DIR__ . "/../dbconnect.php";
+
+$page = isset($_GET['page']) ? $_GET['page'] : 'loaisp_ds';
 ?>
 <body>
     <!--CONTAINER-->
@@ -45,7 +50,7 @@ require_once __DIR__ . "/../dbconnect.php";
                 </div>
                 <div class="col-md-9">
                 <?php
-                $page = isset($_GET['page']) ? $_GET['page'] : 'loaisp_ds';
+                
                 if ($page == 'loaisp_ds'){
                     include('loaisp/display.php');
                 }else if ($page == 'sanpham_ds'){
@@ -78,6 +83,8 @@ require_once __DIR__ . "/../dbconnect.php";
                     include('hinhsanpham/display.php');
                 }else if ($page == 'hinhsp_them'){
                     include('hinhsanpham/create.php');
+                }else if ($page == 'dashboard'){
+                    include('pages/dashboard.php');
                 }
                 ?>
                 </div>
@@ -137,6 +144,9 @@ require_once __DIR__ . "/../dbconnect.php";
         <script src="./../public/js/nsx/kt_nsx.js"></script>
         <script src="./../public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
         <script src="./../public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+    <?php } elseif($page == 'dashboard') {?>
+        <script src="./../public/vendor/Chart.js/Chart.min.js"></script>
+        <script src="./../public/js/pages/dashboard.js"></script>
     <?php } ?>
 
 
