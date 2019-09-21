@@ -52,7 +52,7 @@ EOT;
         <td><?php echo $rowSP['sp_gia'];?></td>
         
         <td>
-        <img src="/sephora/uploads/<?= $rowSP['hsp_tentaptin']; ?>" class="img-thumbnail">
+        <img src="/sephora/public/uploads/<?= $rowSP['hsp_tentaptin']; ?>" class="img-thumbnail">
         </td>
 
         

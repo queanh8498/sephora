@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . "/../dbconnect.php";
+
+$page = isset($_GET['page']) ? $_GET['page'] : 'loaisp_ds';
+?>
+
 <!--stcky sidebar-->
 <!DOCTYPE html>
 <html lang="en">
@@ -10,22 +16,90 @@
     <link rel="stylesheet" href="./../public/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="./../public\vendor\font-awesome-4.7.0\css\font-awesome.min.css">
 
+    <link rel="stylesheet" type="text/css" href="./../stylesheet.css">
+
+
     <?php if($page == 'dashboard') { ?>
         <link rel="stylesheet" href="./../public/vendor/Chart.js/Chart.min.css">
     <?php } ?>
-</head>
-<?php
-require_once __DIR__ . "/../dbconnect.php";
 
-$page = isset($_GET['page']) ? $_GET['page'] : 'loaisp_ds';
-?>
+</head>
+
 <body>
     <!--CONTAINER-->
-    <div class = "container">
-        <div class="row" style="background-color:black;color:white;">
-            <div class="col-md-6 col-12 col-xl-3">LOGO</div>
-            <div class="col-md-6 col-12 col-xl-9">Ten Cty</div>
+    <div class = "container-fluid">
+    <div class="header">
+
+        <div class="container-wrapper">
+            <div class="text-right" > 
+                    <i class="fa fa-user-circle-o" style="font-size:20px; margin-top: 5px;">&nbsp;Sign in &nbsp;</i>
+            </div>
+                <div class="container text-center">
+                    <br>
+                    <h2>S E P H O R A</h2>
+                    <p>Paradise belongs to a half of the whole world</p>
+                
+                        <div class="container-form-search">
+                        <form id="form-search" method="get" action="?page=timkiem" class="ng-pristine ng-valid"><!--chưa đc-->
+                            <div class="input-search">
+                            <input type="text" data-ng-model="textSearch" name="keyword_tensanpham" auto-complete placeholder="Tìm kiếm sản phẩm..." id="input-search" class="ng-pristine ng-untouched ng-valid ui-autocomplete-input" autocomplete="off">
+                            <span class="fa fa-search"></span>
+                            </div><!--close input-search-->
+                        </form>
+                        </div><!--close container-form-search-->
+
+
+                </div><!--close "container text-center-->
+        </div><!--close container-wrapper-->
+        <!--ICON-->
+        <div class="text-right"> 
+        <i class="fa fa-heart-o" style="font-size:24px"></i>
+        &nbsp;&nbsp;
+        <i class="fa fa-facebook" style="font-size:24px"></i>
+        &nbsp;&nbsp;
+        <i class="fa fa-cart-plus" style="font-size:24px"></i>
+        &nbsp;&nbsp;
         </div>
+
+<!--THANH LOGO - NEW - BRANDS ... -->
+<nav class="navbar navbar-expand-md sticky-top" style="background-color:white;color:black" >
+  <!--Brand-->
+  <div class="container justify-content-center">
+    <nav class="stroke">
+    <!--<a class="navbar-brand" href="#" style="background-color:white;color:black">LOGO</a>-->
+    <!-- Links-->
+      <ul class="navbar-nav" >
+        <li class="nav-item">
+          <a class ="nav-link" href="/sephora/backend/index.php">HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class ="nav-link" href="#">NEW</a>
+        </li>
+        <li class="nav-item">
+          <a class ="nav-link" href="#">BRANDS</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class ="nav-link" href="#">CONTACT</a>
+        </li>
+    <!--THANH THẢ XUỐNG-->
+        <li class="nav-item dropdown">
+          <a class ="nav-link dropdown-toggle" href="#" data-toggle="dropdown">ABOUT BEAUTY</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Fashion Trends</a>
+                <a class="dropdown-item" href="#">Makeup Trends</a>
+                <a class="dropdown-item" href="#">Skincare</a>
+            </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</nav>
+
+</div>
+    </div>
+
         
 
         <!--MAIN CONTENT-->
@@ -40,7 +114,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisp_ds';
                 <?php else : ?>
                         <li class="list-group-item"><a href="?page=dangnhap">Đăng nhập</a></li>
                 <?php endif ?>
-
                 <li class="list-group-item"><a href="?page=loaisp_ds">Danh sách Loại sản phẩm</a></li>
                 <li class="list-group-item"><a href="?page=sanpham_ds">Danh sách Sản phẩm</a></li>
                 <li class="list-group-item"><a href="?page=nsx_ds">Danh sách NSX</a></li>
@@ -50,7 +123,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisp_ds';
                 </div>
                 <div class="col-md-9">
                 <?php
-                
+                $page = isset($_GET['page']) ? $_GET['page'] : 'loaisp_ds';
                 if ($page == 'loaisp_ds'){
                     include('loaisp/display.php');
                 }else if ($page == 'sanpham_ds'){
@@ -85,6 +158,8 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'loaisp_ds';
                     include('hinhsanpham/create.php');
                 }else if ($page == 'dashboard'){
                     include('pages/dashboard.php');
+                }else if ($page == 'timkiem'){
+                    include('pages/timkiem.php');
                 }
                 ?>
                 </div>

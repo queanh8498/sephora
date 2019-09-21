@@ -1,4 +1,3 @@
-<h1>hello</h1>
 <?php
 // Include file cấu hình ban đầu của `Twig`
 require_once __DIR__.'/../../bootstrap.php';
@@ -74,7 +73,7 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
                     <div class="text-value" id="baocaoKH_SoLuong">
                         <h1><?= $dataSoLuongKH[0]['SoLuongKH'] ?></h1>
                     </div>
-                    <div>Tổng số KHACH HANG</div>
+                    <div>Tổng Khách hàng</div>
                 </div>
             </div>
             <button class="btn btn-danger btn-sm form-control" id="refreshBaoCaoKH">Refresh dữ liệu</button>
@@ -86,7 +85,7 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
                     <div class="text-value" id="baocaoDH_SoLuong">
                         <h1><?= $dataSoLuongDH[0]['SoLuongDH'] ?></h1>
                     </div>
-                    <div>Tổng số DON HANG</div>
+                    <div>Tổng số Đơn hàng</div>
                 </div>
             </div>
             <button class="btn btn-warning btn-sm form-control" id="refreshBaoCaoDH">Refresh dữ liệu</button>
@@ -98,12 +97,13 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
                     <div class="text-value" id="baocaoGY_SoLuong">
                         <h1><?= $dataSoLuongGY[0]['SoLuongGY'] ?></h1>
                     </div>
-                    <div>Tổng số GOP Y</div>
+                    <div>Tổng số Góp ý</div>
                 </div>
             </div>
             <button class="btn btn-info btn-sm form-control" id="refreshBaoCaoGY">Refresh dữ liệu</button>
         </div> <!-- Tổng số DON hàng -->
     </div><!-- row -->
+<br>
 
     <div class="row">
         <!-- Biểu đồ thống kê loại sản phẩm -->
@@ -111,5 +111,19 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
             <canvas id="chartOfobjChartThongKeLoaiSanPham"></canvas>
             <button class="btn btn-outline-primary btn-sm form-control" id="refreshThongKeLoaiSanPham">Refresh dữ liệu</button>
         </div><!-- col -->
+
+        <div class="col-sm-6 col-lg-6">
+            <canvas id="chartOfobjChartThongKeTopSPBanChay"></canvas>
+            <button class="btn btn-outline-success btn-sm form-control" id="refreshThongKeTopSPBanChay">Refresh dữ liệu</button>
+        </div><!-- col -->
+    </div><!-- row -->
+
+    <div class="row">
+        <!-- Biểu đồ thống kê doanh thu -->
+        <div class="col-sm-12 col-lg-12">
+            <canvas id="chartOfobjChartThongKeDoanhThu"></canvas>
+            <button class="btn btn-warning btn-sm form-control" id="refreshThongKeDoanhThu">Refresh dữ liệu</button>
+        </div><!-- col -->
+
     </div><!-- row -->
 </div>

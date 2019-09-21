@@ -10,9 +10,9 @@
       <p>Paradise belongs to a half of the whole world</p>
     
       <div class="container-form-search">
-        <form id="form-search" action="" class="ng-pristine ng-valid">
+        <form id="form-search" method="get" action="/sephora/frontend/pages/timkiem.php" class="ng-pristine ng-valid">
           <div class="input-search">
-          <input type="text" data-ng-model="textSearch" auto-complete placeholder="Tìm kiếm sản phẩm..." id="input-search" class="ng-pristine ng-untouched ng-valid ui-autocomplete-input" autocomplete="off">
+          <input type="text" data-ng-model="textSearch" name="keyword_tensanpham" auto-complete placeholder="Tìm kiếm sản phẩm..." id="input-search" class="ng-pristine ng-untouched ng-valid ui-autocomplete-input" autocomplete="off">
           <span class="fa fa-search"></span>
           </div><!--close input-search-->
         </form>

@@ -1,45 +1,40 @@
-<?php 
-
-require_once __DIR__ ."/../../dbconnect.php";
-
-    //HERE DOCS
-    $sql = <<<EOT
+<?php
+    require_once __DIR__ .'/../../dbconnect.php';
+    //Lấy dl từ lsp
+    $sql= <<<EOT
     SELECT * FROM sanpham;
 EOT;
-
-$rs = mysqli_query($conn, $sql);
-
-$data = [];
-while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
-    $data[] = array(
-    'sp_ma' => $row['sp_ma'],
-    'sp_ten' => $row['sp_ten'],
-);
-}
-
-//print_r($data); 
-//die;
+    $resultSp=mysqli_query($conn,$sql);
+    $dataSp=[];
+    while($row=mysqli_fetch_array($resultSp, MYSQLI_ASSOC)){
+        $dataSp[]=array(
+            'sp_ma' => $row['sp_ma'],
+            'sp_ten' => $row['sp_ten'],
+        );
+    }
+     /*print_r($data);
+    die;*/
 ?>
 
-<form name="frmhinhSP" id="frmhinhSP" method="post" action="" enctype="multipart/form-data">
-    Chọn File: <input type="file" name="hsp_tentaptin" id="hsp_tentaptin"> <br><br>
-    
-    Sản phẩm <select name="sp_ma" id="sp_ma"> 
-    <?php foreach ($data as $row) : ?> 
-        <option value="<?php echo $row['sp_ma']; ?>"><?php echo $row['sp_ten']; ?></option><br>
-    <?php endforeach; ?>
+<form id="themhsp" name="themhsp" method="post" action="" enctype="multipart/form-data">
+    Chọn hình sản phẩm:
+    <input type="file" id="hsp_tentaptin" name="hsp_tentaptin" class="form-control"><br><br>
 
-    </select> 
-    
+    Sản phẩm: 
+    <select name="sp_ma" id="sp_ma" class="form-control">
+        <?php foreach($dataSp as $sp): ?>
+            <option value="<?= $sp['sp_ma']?>"> <?= $sp['sp_ten']?>  </option>
+        <?php endforeach; ?>
+    </select>
     <br><br>
     
-    <input type="submit" name="submitSave" id="submitSave" class="btn btn-primary" value="HOÀN TÂT">
-
+    <input type="submit" id="btnThem" name="btnThem" class="btn btn-primary" value="Thêm hình sản phẩm">
 </form>
+
 <?php
-    if(isset($_POST['submitSave'])){
+    if(isset($_POST['btnThem'])){
         $sp_ma=$_POST['sp_ma'];
-        $upload_dir="/sephora/uploads/";
+        $upload_dir="./../../public/uploads/";
         if($_FILES['hsp_tentaptin']['error']>0){
             echo "File bị lỗi"; die;
         }
@@ -50,8 +45,6 @@ while ($row = mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
         }
         $sqlInsert="INSERT INTO hinhsanpham(hsp_tentaptin, sp_ma) VALUES ('$hsp_tentaptin', $sp_ma);";
         $result=mysqli_query($conn,$sqlInsert);
-        //var_dump(''); die;
         header('location:/sephora/backend/index.php?page=hinhsp_ds');
     }
 ?>
-
