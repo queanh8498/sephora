@@ -1,0 +1,29 @@
+{# Kế thừa layout frontend #}
+{% extends "frontend/layouts/layout_admin.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Loại Sản phẩm
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Sản phẩm
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+
+{% block content %}
+
+<form name="frmInsertLSP" id="frmInsertLSP" method="post" action="/sephora/backends/quantri/loaisp/create.php">
+        Tên LSP: <input type="text" name="lsp_ten" id="lsp_ten" class="form-control"> <br>
+        Mô tả LSP<input type="text" name="lsp_mota" id="lsp_mota" class="form-control"> <br>
+        
+        <input type="submit" name="submitSave" id="submitSave" class="btn btn-primary" value="SAVE">
+    
+    </form>
+
+{% endblock %}
+{# End Nội dung trong block content #}

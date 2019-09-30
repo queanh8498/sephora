@@ -50,7 +50,7 @@
         $kh_cmnd = $_POST['kh_cmnd'];
         $kh_makichhoat = $_POST['kh_makichhoat'];
         $kh_trangthai = $_POST['kh_trangthai'];
-        $kh_quantri = isset($_POST['kh_quantri']) ? $_POST['kh_quantri'] : 'NULL';
+        $kh_quantri = isset($_POST['kh_quantri']) ? $_POST['kh_quantri'] : '0';
         $sqlInsert = "INSERT INTO khachhang (kh_tendangnhap, kh_matkhau, kh_ten, kh_gioitinh, kh_diachi, kh_dienthoai, kh_email, kh_ngaysinh, kh_thangsinh, kh_namsinh, kh_cmnd, kh_makichhoat, kh_trangthai, kh_quantri) VALUES ('$kh_tendangnhap', '$kh_matkhau', '$kh_ten', $kh_gioitinh, '$kh_diachi', '$kh_dienthoai', '$kh_email', $kh_ngaysinh, $kh_thangsinh, $kh_namsinh, '$kh_cmnd', '$kh_makichhoat', $kh_trangthai, $kh_quantri);";
         //var_dump($sqlInsert); die;
         $resultInsert = mysqli_query($conn, $sqlInsert);

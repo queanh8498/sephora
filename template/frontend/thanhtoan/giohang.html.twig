@@ -1,4 +1,3 @@
-
 {# Kế thừa layout frontend #}
 {% extends "frontend/layouts/layout.html.twig" %}
 
@@ -54,7 +53,7 @@ Giỏ hàng
                         <td>{{ loop.index }}</td>
                         <td>
                             {% if sanpham.hinhdaidien %}
-                            <img src="/sephora/public/uploads/{{ sanpham.hinhdaidien }}" class="hinhdaidien" />
+                            <img src="/sephora/assets/uploads/{{ sanpham.hinhdaidien }}" class="hinhdaidien" />
                             {% else %}
                             <img src="/sephora/vendor/img/no_img.jpg" class="hinhdaidien" />
                             {% endif %}
@@ -77,9 +76,9 @@ Giỏ hàng
             <h2>Giỏ hàng rỗng!!!</h2>
             {% endif %}
 
-            <a href="/sephora/frontend/pages/home.php" class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Quay
+            <a href="/sephora/backends/pages/home.php" class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Quay
                 về trang chủ</a>
-            <a href="/sephora/frontend/thanhtoan/thanhtoan.php" class="btn btn-primary btn-md"><i class="fa fa-shopping-cart"
+            <a href="/sephora/backends/thanhtoan/thanhtoan.php" class="btn btn-primary btn-md"><i class="fa fa-shopping-cart"
                     aria-hidden="true"></i>&nbsp;Thanh toán</a>
         </div>
     </div>
@@ -97,7 +96,7 @@ Giỏ hàng
             sp_ma: id
         };
         $.ajax({
-            url: '/sephora/frontend/ajax/giohang-xoasp-ajax.php',
+            url: '/sephora/backends/ajax/giohang-xoasp-ajax.php',
             method: "POST",
             dataType: 'json',
             data: dulieugoi,

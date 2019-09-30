@@ -13,7 +13,7 @@
 
   <!-- Custom css - Các file css do chúng ta tự viết -->
 
-  <link rel="stylesheet" type="text/css" href="./../../stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="/sephora/stylesheet.css">
   
 <title>
     S E P H O R A |
@@ -34,12 +34,17 @@
   {{ include('frontend/layouts/includes/header.html.twig') }}
   <!-- end header-->
 
-  <main role="main" class="content-wrapper">
+  
     <!-- Block content - Đục lỗ (placeholder) trên giao diện bố cục chung, đặt tên là `content` -->
     {% block content %}
     {% endblock %}
     <!-- End block content -->
-</main>
+<br><hr>
+
+
+    <!-- carousel intro-->
+    {{ include('frontend/layouts/includes/carousel-intro.html.twig') }}
+    <!-- end carousel intro -->
 
   <!-- footer-->
   {{ include('frontend/layouts/includes/footer.html.twig') }}

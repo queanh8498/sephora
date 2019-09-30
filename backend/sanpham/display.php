@@ -62,7 +62,7 @@ EOT;
         <td><?php echo $row['lsp_ten'];?></td>
         <td><?php echo $row['nsx_ten'];?></td>
         
-        <td><a class="btn btn-primary" href="/sephora/sanpham/edit.php?sp_ma=<?php $row['sp_ma']; ?>">Sửa</a>
+        <td><a class="btn btn-primary" href="/sephora/backend/?page=sanpham_sua&sp_ma=<?php echo $row['sp_ma']; ?>">Sửa</a>
         <button class="btn btn-danger btn-delete" data-sp-ma="<?php echo $row['sp_ma']; ?>">XÓA</button>        
     </tr>
 <?php endforeach; ?>

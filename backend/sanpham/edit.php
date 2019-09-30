@@ -103,7 +103,7 @@ EOT;
         $rs = mysqli_query($conn, $sqlUpdate);
         echo "Lưu thành công !";
 
-        header('location:displaysp.php');
+        header('location:display.php');
     }
 ?>
 

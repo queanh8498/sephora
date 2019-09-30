@@ -26,7 +26,7 @@
     border-radius: 0 10px 10px 0; 
     padding:0;
 }
-.container{
+.container-fluid{
     background:#fff; 
     border-radius: 10px; 
 }
@@ -91,11 +91,11 @@
     margin-top:20px; 
     border-radius:3px;}
 .banner-text p{color:#fff;}
-.text-left p{}
+
 </style>
 
-<form name="frmdangnhap" id="frmdangnhap" method="post" action="/sephora/frontend/pages/login.php">
-    <div class="container">
+<form name="frmdangnhap" id="frmdangnhap" method="post" action="/sephora/backends/pages/login.php">
+    <div class="container-fluid">
         {% if message %}
         <div id="thongbao" class="alert alert-danger face" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -152,7 +152,7 @@
                 </div>
                 <br><br>
                 <div class="text-left">
-                    <p >Nếu bạn chưa là thành viên,&nbsp;<a href="/sephora/backend/pages/dangky.php">click vào đây</a> để ĐĂNG KÝ nhé !</p>
+                    <p >Nếu bạn chưa là thành viên,&nbsp;<a href="/sephora/backends/pages/register.php">click vào đây</a> để ĐĂNG KÝ nhé !</p>
                 </div>
 
                 </div>

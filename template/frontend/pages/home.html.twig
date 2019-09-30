@@ -2,13 +2,16 @@
 {% extends "frontend/layouts/layout.html.twig" %}
 
 {% block title %}
-Trang chu 
+Home
 {% endblock %}
 
 {# Nội dung trong block content #}
 {% block content %} 
 <!-- duc lo nay o ben layout.html.twig -->
 <!--BĂNG CHUYỀN CAROUSEL-->
+<div class="container-fluid">
+    <div class="row" >
+        <div class="col-lg-12">
 <div id="bangchuyen" class="carousel slide" data-ride="carousel" style="width:100%; display:block; margin-right:auto;margin-left:auto">
   <!--căn giữa các hình trong băng chuyền để vừa trong 2 cái CONTROL-->
   <!--3 DẤU GẠCH -->
@@ -32,40 +35,41 @@ Trang chu
   <a class="carousel-control-next" href="#bangchuyen" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
+
 </div>
-<br>
+</div>
+</div>
+</div>
+<br> <hr><hr>
 <div class="marketing">
     <div class="row" align="center">
       <div class="col-lg-6">
-        <img src="\sephora\backend\assets\makeup.jpg" alt="" width="300" height="300">
+        <img src="\sephora\assets\makeuphaha.jpg" alt="" width="450" height="300">
         <h3>Makeup</h3>
         <p>Sephora is the paradisse if you're looking for best makeup</p>
       </div>
   
       <div class="col-lg-6">
-      <img src="\sephora\backend\assets\hair.jpg" alt="" width="300" height="300">
+      <img src="\sephora\assets\hair.jpg" alt="" width="450" height="300">
       <h3>Hair Care</h3>
       <p>Sephora provides all you need to cleanse, style & treat any hair style</p>
       </div>
-    
+    </div> 
 </div>
+<hr><hr>
 <!-- Danh sách sản phẩm -->
 <section class="jumbotron text-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">Danh sách Sản phẩm</h1>
-        <p class="lead text-muted">Các sản phẩm với chất lượng, uy tín, cam kết từ nhà Sản xuất, phân phối và bảo hành
-            chính hãng.</p>
-    </div>
+        <h2 class="jumbotron-heading" style="font-family: Georgia">Products</h2>
 </section>
-
+<hr>
 <div class="danhsachsanpham">
     <div class="container">
         <div class="row">
             {% for sanpham in danhsachsanpham %}
-            <div class="col-md-4" style="padding: 20px">
-                <div class="card" style="width: 18rem;height: 460px;">
+            <div class="col-md-4" style="padding: 10px">
+                <div class="card" style="width: 18rem;height: 470px;width: 290px">
                     {% if sanpham.hsp_tentaptin %}
-                    <img src="/sephora/public/uploadfile/{{ sanpham.hsp_tentaptin }}" class="card-img-top" alt="...">
+                    <img src="/sephora/assets/uploads/{{ sanpham.hsp_tentaptin }}" class="card-img-top" alt="..." style="height: 300px; width: 290px">
                     {% else %}
                     <img src="/sephora/vendor/img/no_img.jpg" class="card-img-top" alt="...">
                     {% endif %}
@@ -73,8 +77,12 @@ Trang chu
                     <div class="card-body">
                         <h5 class="card-title">{{ sanpham.sp_ten }}</h5>
                         <p class="card-text">{{ sanpham.sp_mota_ngan }}</p>
-                        <a href="/sephora/frontend/sanpham/chitiet.php?sp_ma={{ sanpham.sp_ma }}" class="btn btn-primary">Mua hàng</a>
-                    </div>
+                        <a href="/sephora/backends/sanpham/chitiet.php?sp_ma={{ sanpham.sp_ma }}" class="btn btn-outline-danger">Chi tiết</a>
+                        <small class="text-muted text-right">
+                            <s>{{ sanpham.sp_giacu }}</s>
+                            <b>{{ sanpham.sp_gia }}</b>
+                        </small>
+                      </div>
                 </div>
             </div>
             {% endfor %}

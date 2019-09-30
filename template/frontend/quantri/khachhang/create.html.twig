@@ -1,0 +1,47 @@
+{# Kế thừa layout frontend #}
+{% extends "frontend/layouts/layout_admin.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Loại Sản phẩm
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Sản phẩm
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+
+{% block content %}
+
+<form name="frmInsertLSP" id="frmInsertLSP" method="post" action="/sephora/backends/quantri/khachhang/create.php">
+        Tên đăng nhập <input type="text" name="kh_tendangnhap" id="kh_tendangnhap" class="form-control"> <br>
+        Mật khẩu <input type="text" name="kh_matkhau" id="kh_matkhau" class="form-control"> <br>
+        Tên KH <input type="text" name="kh_ten" id="kh_ten" class="form-control"> <br>
+        Giới tính KH 
+        <select name="kh_gioitinh" id="kh_gioitinh" class="form-control">
+                <option value="0">Nam</option>
+                <option value="1">Nữ</option>
+        </select><br><br>
+        Địa chỉ KH <input type="text" name="kh_diachi" id="kh_diachi" class="form-control"> <br>
+        Email <input type="text" name="kh_dienthoai" id="kh_dienthoai" class="form-control"> <br>
+        SĐT <input type="text" name="kh_email" id="kh_email" class="form-control"> <br>
+        CMND <input type="text" name="kh_cmnd" id="kh_cmnd" class="form-control"> <br>
+        Trạng thái
+         <select name="kh_trangthai" id="kh_trangthai" class="form-control">
+                <option value="0">Chưa kích hoạt</option>
+                <option value="1">Đã kích hoạt</option>
+        </select><br><br>
+        Quyền quản trị 
+        <input type="checkbox" id="kh_quantri" name="kh_quantri" value="1" />
+
+        <br><br>
+        <input type="submit" name="submitSave" id="submitSave" class="btn btn-primary" value="SAVE">
+    
+</form>
+
+{% endblock %}
+{# End Nội dung trong block content #}

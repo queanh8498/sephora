@@ -19,9 +19,11 @@ Sản phẩm {{ sanpham.sp_ten }}
         font-family: 'open sans';
         overflow-x: hidden;
     }
+
     img {
         max-width: 100%;
     }
+
     .preview {
         display: -webkit-box;
         display: -webkit-flex;
@@ -33,11 +35,13 @@ Sản phẩm {{ sanpham.sp_ten }}
         -ms-flex-direction: column;
         flex-direction: column;
     }
+
     @media screen and (max-width: 996px) {
         .preview {
             margin-bottom: 20px;
         }
     }
+
     .preview-pic {
         -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
@@ -45,28 +49,35 @@ Sản phẩm {{ sanpham.sp_ten }}
         flex-grow: 1;
         max-height: 300px;
     }
+
     .preview-thumbnail.nav-tabs {
         border: none;
         margin-top: 15px;
     }
+
     .preview-thumbnail.nav-tabs li {
         width: 18%;
         margin-right: 2.5%;
     }
+
     .preview-thumbnail.nav-tabs li img {
         max-width: 100%;
         display: block;
     }
+
     .preview-thumbnail.nav-tabs li a {
         padding: 0;
         margin: 0;
     }
+
     .preview-thumbnail.nav-tabs li:last-of-type {
         margin-right: 0;
     }
+
     .tab-content {
         overflow: hidden;
     }
+
     .tab-content img {
         width: 100%;
         -webkit-animation-name: opacity;
@@ -74,12 +85,14 @@ Sản phẩm {{ sanpham.sp_ten }}
         -webkit-animation-duration: .3s;
         animation-duration: .3s;
     }
+
     .card {
         margin-top: 50px;
         background: #eee;
         padding: 3em;
         line-height: 1.5em;
     }
+
     @media screen and (min-width: 997px) {
         .wrapper {
             display: -webkit-box;
@@ -88,6 +101,7 @@ Sản phẩm {{ sanpham.sp_ten }}
             display: flex;
         }
     }
+
     .details {
         display: -webkit-box;
         display: -webkit-flex;
@@ -99,12 +113,14 @@ Sản phẩm {{ sanpham.sp_ten }}
         -ms-flex-direction: column;
         flex-direction: column;
     }
+
     .colors {
         -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
     }
+
     .product-title,
     .price,
     .sizes,
@@ -112,10 +128,12 @@ Sản phẩm {{ sanpham.sp_ten }}
         text-transform: UPPERCASE;
         font-weight: bold;
     }
+
     .checked,
     .price span {
         color: #ff9f1a;
     }
+
     .product-title,
     .rating,
     .product-description,
@@ -124,15 +142,19 @@ Sản phẩm {{ sanpham.sp_ten }}
     .sizes {
         margin-bottom: 15px;
     }
+
     .product-title {
         margin-top: 0;
     }
+
     .size {
         margin-right: 10px;
     }
+
     .size:first-of-type {
         margin-left: 40px;
     }
+
     .color {
         display: inline-block;
         vertical-align: middle;
@@ -141,9 +163,11 @@ Sản phẩm {{ sanpham.sp_ten }}
         width: 2em;
         border-radius: 2px;
     }
+
     .color:first-of-type {
         margin-left: 20px;
     }
+
     .add-to-cart,
     .like {
         background: #ff9f1a;
@@ -155,50 +179,61 @@ Sản phẩm {{ sanpham.sp_ten }}
         -webkit-transition: background .3s ease;
         transition: background .3s ease;
     }
+
     .add-to-cart:hover,
     .like:hover {
         background: #b36800;
         color: #fff;
     }
+
     .not-available {
         text-align: center;
         line-height: 2em;
     }
+
     .not-available:before {
         font-family: fontawesome;
         content: "\f00d";
         color: #fff;
     }
+
     .orange {
         background: #ff9f1a;
     }
+
     .green {
         background: #85ad00;
     }
+
     .blue {
         background: #0076ad;
     }
+
     .tooltip-inner {
         padding: 1.3em;
     }
+
     @-webkit-keyframes opacity {
         0% {
             opacity: 0;
             -webkit-transform: scale(3);
             transform: scale(3);
         }
+
         100% {
             opacity: 1;
             -webkit-transform: scale(1);
             transform: scale(1);
         }
     }
+
     @keyframes opacity {
         0% {
             opacity: 0;
             -webkit-transform: scale(3);
             transform: scale(3);
         }
+
         100% {
             opacity: 1;
             -webkit-transform: scale(1);
@@ -210,9 +245,8 @@ Sản phẩm {{ sanpham.sp_ten }}
 
 {# Nội dung trong block content #}
 {% block content %}
-
 <div class="container mt-4">
-    <div id="thongbao" class="alert alert-danger d-none face sticky-top" role="alert">
+    <div id="thongbao" class="alert alert-danger d-none face" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -220,20 +254,23 @@ Sản phẩm {{ sanpham.sp_ten }}
 
     <div class="card">
         <div class="container-fliud">
-            <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post" action="#">
+            <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post"
+                action="/sephora/frontend/giohang/themvaogiohang">
                 {% set hinhsanphamdautien = sanpham.danhsachhinhanh|first %}
                 <input type="hidden" name="sp_ma" id="sp_ma" value="{{ sanpham.sp_ma }}" />
                 <input type="hidden" name="sp_ten" id="sp_ten" value="{{ sanpham.sp_ten }}" />
                 <input type="hidden" name="sp_gia" id="sp_gia" value="{{ sanpham.sp_gia }}" />
-                <input type="hidden" name="hinhdaidien" id="hinhdaidien" value="{{ hinhsanphamdautien.hsp_tentaptin }}" />
+                <input type="hidden" name="hinhdaidien" id="hinhdaidien"
+                    value="{{ hinhsanphamdautien.hsp_tentaptin }}" />
 
                 <div class="wrapper row">
                     <div class="preview col-md-6">
                         {% if sanpham.danhsachhinhanh|length > 0 %}
                         <div class="preview-pic tab-content">
                             {% for hinhsanpham in sanpham.danhsachhinhanh %}
-                            <div class="tab-pane {{ (hinhsanpham == hinhsanphamdautien) ? 'active' : '' }}" id="pic-{{ loop.index }}">
-                                <img src="\sephora\public\uploadfile{{ hinhsanpham.hsp_tentaptin }}" />
+                            <div class="tab-pane {{ (hinhsanpham == hinhsanphamdautien) ? 'active' : '' }}"
+                                id="pic-{{ loop.index }}">
+                                <img src="/sephora/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" style="height: 370px"/>
                             </div>
                             {% endfor %}
                         </div>
@@ -241,7 +278,7 @@ Sản phẩm {{ sanpham.sp_ten }}
                             {% for hinhsanpham in sanpham.danhsachhinhanh %}
                             <li class="{{ (hinhsanpham == hinhsanphamdautien) ? 'active' : '' }}">
                                 <a data-target="#pic-{{ loop.index }}" data-toggle="tab">
-                                    <img src="\sephora\public\uploadfile{{ hinhsanpham.hsp_tentaptin }}" />
+                                    <img src="/sephora/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" />
                                 </a>
                             </li>
                             {% endfor %}
@@ -249,15 +286,16 @@ Sản phẩm {{ sanpham.sp_ten }}
                         {% else %}
                         <!-- Không có hình sản phẩm nào => lấy ảnh mặc định -->
                         <div class="preview-pic tab-content">
-                            <div class="tab-pane active" id="pic-1">
+                            <div class="tab-pane active"
+                                id="pic-1">
                                 <img src="\sephora\vendor\img\no_img.jpg" />
                             </div>
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
                             <li class="active">
                                 <a data-target="#pic-1" data-toggle="tab">
-                                    <img src="\sephora\vendor\img\no_img.jpg" />
-                                </a>
+                                        <img src="\sephora\vendor\img\no_img.jpg" />
+                                    </a>
                             </li>
                         </ul>
                         {% endif %}
@@ -320,41 +358,45 @@ Sản phẩm {{ sanpham.sp_ten }}
 
 {% block customscripts %}
 <script>
-    
-    $('#btnThemVaoGioHang').click(function (event) {
-        event.preventDefault();
-        // Nhờ AJAX gởi đi
-        // Chuẩn bị dữ liệu để gởi đi
+    function addSanPhamVaoGioHang() {
         var dulieugoi = {
-            sp_ma: $('#sp_ma').val(), // 1
-            sp_ten: $('#sp_ten').val(), //Samsung
-            sp_gia: $('#sp_gia').val(), //12000000.00
-            hinhdaidien: $('#hinhdaidien').val(), //2047_tinh-yeu-ngot-ngao.jpg
-            soluong: $('#soluong').val(), // 3
+            sp_ma: $('#sp_ma').val(),
+            sp_ten: $('#sp_ten').val(),
+            sp_gia: $('#sp_gia').val(),
+            hinhdaidien: $('#hinhdaidien').val(),
+            soluong: $('#soluong').val(),
         };
-        //console.log((dulieugoi));
-        // Gởi dữ liệu đi (sử dụng JQUERY AJAX)
+        console.log((dulieugoi));
+
         $.ajax({
-            url: '/sephora/frontend/ajax/giohang-themsp-ajax.php',
+            url: '/sephora/backends/ajax/giohang-themsp-ajax',
             method: "POST",
             dataType: 'json',
             data: dulieugoi,
             success: function (data) {
                 console.log(data);
                 var htmlString =
-                    `Sản phẩm đã được thêm vào Giỏ hàng. <a href="/sephora/frontend/thanhtoan/giohang.php">Xem Giỏ hàng</a>.`;
+                    `Sản phẩm đã được thêm vào Giỏ hàng. <a href="/sephora/backends/thanhtoan/giohang">Xem Giỏ hàng</a>.`;
                 $('#thongbao').html(htmlString);
+
                 // Hiện thông báo
                 $('.alert').removeClass('d-none').addClass('show');
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);
-                var htmlString = `<h5>Không thể xử lý</h5>`;
+
+                var htmlString = `<h1>Không thể xử lý</h1>`;
                 $('#thongbao').html(htmlString);
+
                 // Hiện thông báo
                 $('.alert').removeClass('d-none').addClass('show');
             }
         });
+    };
+
+    $('#btnThemVaoGioHang').click(function (event) {
+        event.preventDefault();
+        addSanPhamVaoGioHang();
     });
 </script>
 {% endblock %}

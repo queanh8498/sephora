@@ -1,0 +1,43 @@
+{# Kế thừa layout frontend #}
+{% extends "frontend/layouts/layout_admin.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Sản phẩm
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Sản phẩm
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+
+{% block content %}
+
+<form name="frmInsertSP" id="frmInsertSP" method="post" action="/sephora/backends/quantri/sanpham/create.php">
+        Tên SP: <input type="text" name="sp_ten" id="sp_ten" class="form-control"> <br>
+        Giá SP<input type="text" name="sp_gia" id="sp_gia" class="form-control"> <br>
+        Giá cũ SP: <input type="text" name="sp_giacu" id="sp_giacu" class="form-control"> <br>
+        Mô tả ngắn: <input type="text" name="sp_mota_ngan" id="sp_mota_ngan" class="form-control"> <br>
+        Số lượng: <input type="text" name="sp_soluong" id="sp_soluong" class="form-control"> <br>
+        Loại SP: 
+        <select name="lsp_ma" id="lsp_ma" class="form-control"> 
+            {% for loaisanpham in danhsachLSP %}
+            <option value="{{loaisanpham.lsp_ma}}">{{loaisanpham.lsp_ten}}</option><br>
+            {% endfor %}
+        </select> <br>
+    
+        Nhà Sản Xuất: <select name="nsx_ma" id="nsx_ma" class="form-control"> 
+            {% for nhasanxuat in danhsachNSX %}
+                <option value="{{nhasanxuat.nsx_ma}}">{{nhasanxuat.nsx_ten}}</option><br>
+            {% endfor %}
+        </select> <br>
+        
+        <input type="submit" name="submitSave" id="submitSave" class="btn btn-primary" value="Save">
+    
+</form>
+{% endblock %}
+{# End Nội dung trong block content #}

@@ -1,0 +1,138 @@
+{# Kế thừa layout frontend #}
+{% extends "frontend/layouts/layout.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Đăng ký
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Đăng nhập
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+
+{% block content %}
+
+<style>
+
+.container-fluid{
+    background:#fff; 
+    border-radius: 10px; 
+}
+
+.login-sec{
+    padding: 50px 30px; 
+    position:relative;
+}
+.login-sec .copy-text{
+    position:absolute; 
+    width:80%; bottom:20px; 
+    font-size:13px; 
+    text-align:center;
+    }
+.login-sec .copy-text i{
+    color:#FEB58A;
+    }
+.login-sec .copy-text a{color:#E36262;}
+
+.login-sec h2{
+    margin-bottom:30px; 
+    font-weight:800; 
+    font-size:30px; 
+    color: #DE6262;
+    }
+.login-sec h2:after{
+    content:" "; 
+    width:100px; height:5px; 
+    background:#FEB58A; 
+    display:block; 
+    margin-top:20px; 
+    border-radius:3px; 
+    margin-left:auto;margin-right:auto}
+.btn-regist{
+    background: #DE6262; 
+    color:#fff; 
+    font-weight:600;}
+.banner-text{
+    width:70%; 
+    position:absolute; 
+    bottom:40px; 
+    padding-left:20px;}
+.banner-text h2{color:#fff; font-weight:600;}
+.banner-text h2:after{
+    content:" "; 
+    width:100px; height:5px; 
+    background:#FFF; 
+    display:block; 
+    margin-top:20px; 
+    border-radius:3px;}
+.banner-text p{color:#fff;}
+
+</style>
+
+<form name="frmDangKy" id="frmDangKy" method="post" action="/sephora/backends/pages/register.php">
+    <div class="container-fluid">
+        {% if message %}
+        <div id="thongbao" class="alert alert-danger face" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+        {% endif %}
+        
+        <div class="container">           
+            <div class="login-sec">                   
+                <h2 class="text-center">Đăng ký</h2><form class="register-form">
+            <div class="form-group">
+                <label >ID</label><input type="text" class="form-control" name="kh_tendangnhap" id="kh_tendangnhap" >  
+            </div>
+            <div class="form-group">
+                <label>Password</label><input type="password" class="form-control" name="kh_matkhau" id="kh_matkhau" >
+            </div>
+            <div class="form-group">
+                    <label>Tên KH:</label><input type="text" class="form-control" name="kh_ten" id="kh_ten" >
+                </div>
+            <div class="form-group">
+                    <label>Giới tính</label>
+                <select name="kh_gioitinh" id="kh_gioitinh">
+                    <option value="0">Nam</option>
+                    <option value="1">Nữ</option>
+                    <option value="2">Không công bố</option>
+                </select>      
+            </div>
+            <div class="form-group">
+                <label>Địa chỉ:</label><input type="text" class="form-control" name="kh_diachi" id="kh_diachi" >
+            </div>
+            <div class="form-group">
+                <label>SDT:</label><input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai" >
+            </div>
+            <div class="form-group">
+                <label>Email:</label><input type="text" class="form-control" name="kh_email" id="kh_email" >
+            </div>
+            <div class="form-group">
+                <label>Ngày sinh:</label><input type="text" class="form-control" name="kh_ngaysinh" id="kh_ngaysinh" >
+            </div>
+            <div class="form-group">
+                <label>Tháng sinh:</label><input type="text" class="form-control" name="kh_thangsinh" id="kh_thangsinh" >
+            </div>
+            <div class="form-group">
+                <label>Năm sinh</label><input type="text" class="form-control" name="kh_namsinh" id="kh_namsinh" >
+            </div>
+            <div class="form-group">
+                    <label>CMND:</label><input type="text" class="form-control" name="kh_cmnd" id="kh_cmnd" >
+            </div>
+            <div class="form-check">
+                <button type="submit" class="btn btn-regist float-center" name="btnDangKy">Submit</button>
+            </div>
+            
+        </div>
+     </div>   
+    </div> 
+</form>
+{% endblock %}
+{# End Nội dung trong block content #}

@@ -2,6 +2,7 @@
     display:block;
 }
 
+
 .input-search input{
     width: 500px;
     height: 35px;
@@ -23,6 +24,36 @@
     
     /*3 dong cuối là căn giữa hinh anh. nhớ nhé !!! */
   }
+
+   
+#header-nav>.nav.stroke ul li a {
+  position: relative;
+}
+#header-nav nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+#header-nav nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+  
+ #header-nav .nav-item a{
+  background-color:white;
+  color:black;
+  margin-right:0px;
+  font-family: Georgia;
+  font-size: 15px;
+ }
+
+  
 nav.stroke ul li a {
   position: relative;
 }

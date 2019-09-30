@@ -1,0 +1,37 @@
+{# Kế thừa layout backend #}
+{% extends "frontend/layouts/layout_admin.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Sửa Sản phẩm
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Sửa Sản phẩm
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+{% block content %}
+
+<form name="frmSuaLSP" id="frmSuaLSP" method="post" action="/sephora/backends/quantri/loaisp/edit?lsp_ma={{ loaisanpham.lsp_ma }}">
+    <div class="form-group">
+        <label for="lsp_ma"> Mã LSP: </label>
+       <input type="text" class="form-control" name="lsp_ma" readonly value="{{ loaisanpham.lsp_ma }}"> <br>
+    </div>
+    <div class="form-group">
+        <label for="lsp_ten">Tên LSP: </label>
+        <input type="text" class="form-control" name="lsp_ten" value=" {{ loaisanpham.lsp_ten }}"> <br>
+    </div>
+    <div class="form-group">
+        <label for="lsp_mota">Mô tả LSP: </label>
+        <input type="text" class="form-control" name="lsp_mota" value=" {{ loaisanpham.lsp_mota }}"> <br>
+    </div>
+    
+        <button class="btn btn-outline-primary" name="btnSave" >Cập nhật</button>
+</form>
+
+{% endblock %}
+{# End Nội dung trong block content #}

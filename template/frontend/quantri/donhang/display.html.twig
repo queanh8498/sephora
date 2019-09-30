@@ -1,0 +1,61 @@
+{# Kế thừa layout backend #}
+{% extends "frontend/layouts/layout_admin.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Danh sách Đơn hàng
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Danh sách Đơn hàng
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+{% block content %}
+<table class="table table-bordered table-hover mt-2">
+    <thead class="thead">
+        <tr>
+            <th>Mã Đơn đặt hàng</th>
+            <th>Khách hàng</th>
+            <th>Ngày lập</th>
+            <th>Ngày giao</th>
+            <th>Nơi giao</th>
+            <th>Hình thức thanh toán</th>
+            <th>Tổng thành tiền</th>
+            <th>Trạng thái thanh toán</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dondathang in ds_dondathang %}
+        <tr>
+            <td>{{ dondathang.dh_ma }}</td>
+            <td><b>{{ dondathang.kh_ten }}</b><br />({{ dondathang.kh_dienthoai }})</td>
+            <td>{{ dondathang.dh_ngaylap }}</td>
+            <td>{{ dondathang.dh_ngaygiao }}</td>
+            <td>{{ dondathang.dh_noigiao }}</td>
+            <td>{{ dondathang.httt_ten }}</td>
+            <td>{{ dondathang.TongThanhTien }}</td>
+            <td>
+                {% if dondathang.dh_trangthaithanhtoan == 0 %}
+                Chưa xử lý
+                {% else %}
+                Đã giao hàng
+                {% endif %}
+            </td>
+            <td>
+                {% if dondathang.dh_trangthaithanhtoan == 0 %}
+                <a href="delete?dh_ma={{ dondathang.dh_ma }}" class="btn btn-danger"><span data-feather="delete"></span> Xóa
+                </a>
+                {% else %}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{# End Nội dung trong block content #}

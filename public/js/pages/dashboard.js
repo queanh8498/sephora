@@ -8,11 +8,10 @@ var $chartOfobjChartThongKeTopSPBanChay = document.getElementById("chartOfobjCha
 var $objChartThongKeDoanhThu;
 var $chartOfobjChartThongKeDoanhThu = document.getElementById("chartOfobjChartThongKeDoanhThu").getContext("2d");
 
-
 $(document).ready(function() {
     // Vẽ biểu đồ Loại sản phẩm
     $.ajax({
-        url: '/sephora/backend/ajax/baocao-thongkeloaisanpham-ajax.php',
+        url: '/sephora/backends/ajax/baocao-thongkeloaisanpham-ajax.php',
         type: "GET",
         success: function (response) {
             var data = JSON.parse(response);
@@ -57,7 +56,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-        url: '/sephora/backend/ajax/baocao-thongketop3spbanchaynhat-ajax.php',
+        url: '/sephora/backends/ajax/baocao-thongketop3spbanchaynhat-ajax.php',
         type: "GET",
         success: function (response) {
             var data = JSON.parse(response);
@@ -103,7 +102,7 @@ $(document).ready(function() {
 
     // Vẽ biểu đồ doanh thu
     $.ajax({
-        url: '/sephora/backend/ajax/baocao-thongkedoanhthu-ajax.php',
+        url: '/sephora/backends/ajax/baocao-thongkedoanhthu-ajax.php',
         type: "GET",
         success: function (response) {
             var data = JSON.parse(response);

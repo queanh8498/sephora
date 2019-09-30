@@ -22,7 +22,7 @@ Thanh toán
 {# Nội dung trong block content #}
 {% block content %}
 <div class="container mt-4">
-    <form class="needs-validation" name="frmthanhtoan" method="post" action="/sephora/frontend/thanhtoan/thanhtoan.php">
+    <form class="needs-validation" name="frmthanhtoan" method="post" action="/sephora/backends/thanhtoan/thanhtoan.php">
         <input type="hidden" name="kh_tendangnhap" value="{{ khachhang.kh_tendangnhap }}" />
 
         <div class="py-5 text-center">
@@ -59,15 +59,6 @@ Thanh toán
                         <strong>{{ tongthanhtien }}</strong>
                     </li>
                 </ul>
-
-                <form class="card p-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Mã khuyến mãi">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-secondary">Xác nhận</button>
-                        </div>
-                    </div>
-                </form>
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Thông tin khách hàng</h4>
