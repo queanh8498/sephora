@@ -22,20 +22,19 @@ Thanh toán
 {# Nội dung trong block content #}
 {% block content %}
 <div class="container mt-4">
-    <form class="needs-validation" name="frmthanhtoan" method="post" action="/sephora/backends/thanhtoan/thanhtoan.php">
+    <form class="needs-validation" name="frmthanhtoan" method="post" action="/sephora.com/backends/thanhtoan/thanhtoan.php">
         <input type="hidden" name="kh_tendangnhap" value="{{ khachhang.kh_tendangnhap }}" />
 
         <div class="py-5 text-center">
-            <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
-            <h2>Thanh toán</h2>
-            <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+            <h1>Thanh toán</h1>
+            <h5>Vui lòng kiểm tra thông tin trước khi Đặt hàng.</h5>
         </div>
 
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Giỏ hàng</span>
-                    <span class="badge badge-secondary badge-pill">{{ giohangdata|length }}</span>
+                    <span>Giỏ hàng</span>
+                    <span class="badge badge-warning badge-pill">{{ giohangdata|length }}</span>
                 </h4>
                 <ul class="list-group mb-3">
                     {% set tongthanhtien = 0 %}
@@ -84,22 +83,6 @@ Thanh toán
                         <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai"
                             value="{{ khachhang.kh_dienthoai }}" readonly>
                     </div>
-                    <div class="col-md-12">
-                        <label for="kh_email">Email</label>
-                        <input type="text" class="form-control" name="kh_email" id="kh_email"
-                            value="{{ khachhang.kh_email }}" readonly>
-                    </div>
-                    <div class="col-md-12">
-                        <label for="kh_ngaysinh">Ngày sinh</label>
-                        <input type="text" class="form-control" name="kh_ngaysinh" id="kh_ngaysinh"
-                            value="{{ khachhang.kh_ngaysinh }}/{{ khachhang.kh_thangsinh }}/{{ khachhang.kh_namsinh }}"
-                            readonly>
-                    </div>
-                    <div class="col-md-12">
-                        <label for="kh_cmnd">CMND</label>
-                        <input type="text" class="form-control" name="kh_cmnd" id="kh_cmnd"
-                            value="{{ khachhang.kh_cmnd }}" readonly>
-                    </div>
                 </div>
 
                 <h4 class="mb-3">Hình thức thanh toán</h4>
@@ -115,7 +98,7 @@ Thanh toán
                     {% endfor %}
                 </div>
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang">Đặt hàng</button>
+                <button class="btn btn-warning btn-lg" type="submit" name="btnDatHang"><b>Đặt hàng</b></button>
             </div>
         </div>
     </form>

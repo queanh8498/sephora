@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Antic+Didone|Dosis|Stoke|Lora");
+
 .dropdown:hover>.dropdown-menu{
     display:block;
 }
-
 
 .input-search input{
     width: 500px;
@@ -13,7 +14,7 @@
 }
 .dropdown-menu {
     float: left; 
-    width: 70%; }
+    width: 100%; }
 
   .carousel-inner img{
     width: 100%;
@@ -53,7 +54,6 @@
   font-size: 15px;
  }
 
-  
 nav.stroke ul li a {
   position: relative;
 }
@@ -93,3 +93,77 @@ nav.stroke ul li a:hover:after {
   
 }
  
+.product .sp h1{
+  font-family: 'Lora', serif;
+}
+
+.product .container{
+	
+	font-size: 20px;
+	/* text-align:center; */
+}
+.container ul li{
+	display:inline-block; /*de tren cung 1 dong*/
+	padding: 5px 5px;
+}
+.product .container  {
+	display:outline-block;
+	margin-right: 30px;
+}
+.product .container .img-fluid {
+	-webkit-transform: scale(1.0);
+	-moz-transform: scale(1.0);
+	-ms-transform: scale(1.0);
+	-o-transform: scale(1.0);
+	transform: scale(1.0);
+}
+.product .container .img-fluid:hover{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+
+
+
+/**/
+.product h1{
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.product p{
+  font-family: 'Dosis', sans-serif;
+}
+/*NÚT XEM THEM*/
+.example_c {
+  color: #494949 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  border: 4px solid #494949 !important;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  width: 50;
+  font-size: 12px;
+  }
+  .example_c:hover {
+    color: #ffffff !important;
+    background: #131414;
+    border-color: #131414 !important;
+    transition: all 0.4s ease 0s;
+    }
+
+  .button_cont a:hover{
+    text-decoration: none;
+  }
+
+
+
+
+
+

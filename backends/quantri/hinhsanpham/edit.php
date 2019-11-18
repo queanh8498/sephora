@@ -29,7 +29,7 @@ if(isset($_POST['btnCapNhat']))
 
     if (isset($_FILES['hsp_tentaptin']))
     {
-        $upload_dir = "./../../assets/uploads/";
+        $upload_dir = "./../../../assets/uploads";
 
         if ($_FILES['hsp_tentaptin']['error'] > 0)
         {
@@ -50,7 +50,7 @@ if(isset($_POST['btnCapNhat']))
         mysqli_query($conn, $sql);
         mysqli_close($conn);
 
-        header('location:index.php');
+        header('location:display.php');
     }
 }
 

@@ -1,0 +1,83 @@
+
+<div class="header">
+  
+    <div class="container">
+          <div id="header-nav">
+              <nav class="navbar navbar-expand-md sticky-top" >
+                  <nav class="stroke">
+                  <!-- Links-->
+                    <ul class="navbar-nav" >
+                      <li class="nav-item">
+                        <a class ="nav-link" href="/sephora.com/backends/pages/login.php"> <i class="fa fa-user-circle-o">&nbsp;&nbsp;</i>Sign In</a>
+                      </li>
+                      
+                      <li class="nav-item">
+                        <a class ="nav-link" href="/sephora.com/backends/thanhtoan/giohang.php"><i class="fa fa-cart-plus" >&nbsp;&nbsp;</i>Your Cart</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class ="nav-link" href="/sephora.com/backends/pages/logout.php"><i class="fa fa-sign-out">&nbsp;&nbsp;</i>Sign Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class ="nav-link" href="/sephora.com/backends/pages/home_admin.php"><i class="fa fa-adn">&nbsp;&nbsp;</i>Administrate</a>
+                          </li>
+                    </ul>
+                  </nav>               
+              </nav>              
+            </div>     
+      </div>
+  
+      <div class="container text-center">
+        <br>
+        <h2>S E P H O R A</h2>
+        <p>Paradise belongs to a half of the whole world</p>
+      
+        <div class="container-form-search">
+          <form name="frmTimKiem" id="form-search" method="get" action="/sephora.com/backends/pages/timkiem.php" class="ng-pristine ng-valid">
+            <div class="input-search">
+            <input type="text" data-ng-model="textSearch" value ="{{ keyword_tensanpham }}" name="keyword_tensanpham" auto-complete placeholder="Tìm kiếm sản phẩm..." id="input-search" class="ng-pristine ng-untouched ng-valid ui-autocomplete-input" autocomplete="off">
+            <span class="fa fa-search"type="submit"></span>
+            </div><!--close input-search-->
+          </form>
+        </div><!--close container-form-search-->
+  
+  
+      </div><!--close "container text-center-->
+    </div><!--close container-wrapper-->
+  
+  <!--THANH LOGO - NEW - BRANDS ... -->
+  
+    <nav class="navbar navbar-expand-md sticky-top" style="background-color:white;color:black" >
+      <!--Brand-->
+      <div class="container justify-content-center">
+        <nav class="stroke">
+        <!-- Links-->
+          <ul class="navbar-nav" >
+            <li class="nav-item">
+              <a class ="nav-link" href="/sephora.com/backends/pages/">HOME</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class ="nav-link" href="/sephora.com/backends/sanpham/dssp">NEW</a>
+            </li>
+            <li class="nav-item">
+              <a class ="nav-link" href="/sephora.com/backends/pages/brands">BRANDS</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class ="nav-link" href="#">CONTACT</a>
+            </li>
+        <!--THANH THẢ XUỐNG-->
+            <li class="nav-item dropdown">
+              <a class ="nav-link dropdown-toggle" href="#" data-toggle="dropdown">ABOUT BEAUTY</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Fashion Trends</a>
+                <a class="dropdown-item" href="#">Makeup Trends</a>
+                <a class="dropdown-item" href="#">Skincare</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </nav>
+  </div>
+  

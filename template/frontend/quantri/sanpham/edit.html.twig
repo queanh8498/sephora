@@ -1,5 +1,5 @@
 {# Kế thừa layout backend #}
-{% extends "frontend/layouts/layout_admin.html.twig" %}
+{% extends "frontend/layouts/layout.html.twig" %}
 
 {# Nội dung trong block title #}
 {% block title %}
@@ -15,7 +15,7 @@ Sửa Sản phẩm
 
 {# Nội dung trong block content #}
 {% block content %}
-<form name="frmSP" id="frmSP" method="post" action="/sephora/backends/quantri/sanpham/edit?sp_ma={{ sanpham.sp_ma }}">
+<form name="frmSP" id="frmSP" method="post" action="/sephora.com/backends/quantri/sanpham/edit?sp_ma={{ sanpham.sp_ma }}">
     <div class="form-group">
         <label for="sp_ma">Mã Sản phẩm</label>
         <input type="text" class="form-control" id="sp_ma" name="sp_ma" placeholder="Mã Sản phẩm" readonly value="{{ sanpham.sp_ma }}">

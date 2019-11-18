@@ -1,16 +1,19 @@
 <?php
-// Include file cấu hình ban đầu của `Twig`
 require_once __DIR__.'/../../bootstrap.php';
 
 include_once(__DIR__.'/../../dbconnect.php');
 
-if (isset($_SESSION['username']) ){
+$message = '';
+
+if (isset($_SESSION['username'])){
     
     unset($_SESSION['username']);
-    
-    header('location:home.php');
+
+    $message = 'Đăng xuất thành công !';
+    //header('location:login.php');
 }
     else {
-        echo $twig->render('frontend/pages/home.html.twig');
+        $message = 'Người dùng chưa Đăng nhập! Bạn không thể Đăng xuất !';
     }
+    echo $twig->render('frontend/pages/logout.html.twig', ['message' => $message]);
 ?>

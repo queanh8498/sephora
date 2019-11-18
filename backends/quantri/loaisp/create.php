@@ -64,7 +64,7 @@ include_once(__DIR__.'/../../../dbconnect.php');
         mysqli_query($conn, $sqlInsert);
         echo 'Lưu thành công!';
         // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-        header("location:/sephora/backends/quantri/loaisp/display.php");
+        header("location:/sephora.com/backends/quantri/loaisp/display.php");
     }
 }
 

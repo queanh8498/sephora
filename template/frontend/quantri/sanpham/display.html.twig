@@ -17,7 +17,9 @@ Sản phẩm
 
 {% block content %}
 <br>
-<a href="create.php" class="btn btn-info">Thêm mới</a>
+<div class="container-fluid"></div>
+<a href="create.php" class="btn btn-warning">Thêm mới</a>
+<br><br>
 <table class="table table-bodered table-hover" >
     <tr>
         <th>Tên SP</th>
@@ -39,7 +41,7 @@ Sản phẩm
             <td>{{ sanpham.lsp_ten }}</td>
             <td>{{ sanpham.nsx_ten }}</td>
             <td>
-                <a href="edit?sp_ma={{ sanpham.sp_ma }}" class="btn btn-warning">
+                <a href="edit?sp_ma={{ sanpham.sp_ma }}" class="btn btn-dark">
                     <span data-feather="edit"></span> Sửa
                 </a>
 
@@ -51,5 +53,6 @@ Sản phẩm
         {% endfor %}
     </div>
 </table>
+</div>
 {% endblock %}
 {# End Nội dung trong block content #}

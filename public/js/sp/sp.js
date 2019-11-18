@@ -17,8 +17,7 @@ $(document).ready(function(){
                 'Đã xóa !',
                 'Thành công !'
               )
-            ///Điều hướng
-            window.location.href="/sephora/sanpham/delete.php?sp_ma="+sp_ma;
+            window.location.href="/sephora.com/sanpham/delete.php?sp_ma="+sp_ma;
 
             }
           })

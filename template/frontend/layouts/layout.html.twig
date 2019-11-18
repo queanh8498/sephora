@@ -2,18 +2,14 @@
 <html lang="vi" class="h-100">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/sephora/public/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
-  <!-- Font awesome -->
-  <link rel="stylesheet" href="/sephora/public/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css"/>
+  <link rel="stylesheet" href="/sephora.com/public/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/sephora.com/public/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css"/>
 
-  <!-- Custom css - Các file css do chúng ta tự viết -->
-
-  <link rel="stylesheet" type="text/css" href="/sephora/stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="/sephora.com/stylesheet.css">
+  
   
 <title>
     S E P H O R A |
@@ -22,7 +18,7 @@
 
 </title>
 
-<!-- Block custom-styles - Đục lỗ trên giao diện bố cục chung, đặt tên là `custom-styles` -->
+<!-- Block custom-styles-->
 {% block customstyles %}
 {% endblock %}
 <!-- End block custom-styles -->
@@ -35,7 +31,7 @@
   <!-- end header-->
 
   
-    <!-- Block content - Đục lỗ (placeholder) trên giao diện bố cục chung, đặt tên là `content` -->
+    <!-- Block content  -->
     {% block content %}
     {% endblock %}
     <!-- End block content -->
@@ -45,17 +41,16 @@
   {{ include('frontend/layouts/includes/footer.html.twig') }}
   <!-- end footer-->
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="/sephora/public/vendor/jquery/jquery.min.js"></script>
-  <script src="/sephora/public/vendor/popperjs/popper.min.js"></script>
-  <script src="/sephora/public/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/sephora.com/public/vendor/jquery/jquery.min.js"></script>
+  <script src="/sephora.com/public/vendor/popperjs/popper.min.js"></script>
+  <script src="/sephora.com/public/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/sephora.com/public/vendor/feather/feather.min.js"></script>
 
-  <!-- Custom script - Các file js do mình tự viết 
-  <script src="/sephora/public/frontend/js/app.js"></script>
-  -->
+  <script src="/sephora.com/public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+  <script src="/sephora.com/public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
 
-  <!-- Block custom-scripts - Đục lỗ trên giao diện bố cục chung, đặt tên là `custom-scripts` -->
+  <script src="/sephora.com/public/vendor/app/app.js"></script>
+
   {% block customscripts %}
   {% endblock %}
   <!-- End block custom-scripts -->

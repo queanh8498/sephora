@@ -87,13 +87,13 @@ Thống kê dữ liệu
 {# End Nội dung trong block content #}
 
 {% block customscripts %}
-<script src="/sephora/public/vendor/Chart.js/Chart.min.js"></script>
+<script src="/sephora.com/public/vendor/Chart.js/Chart.min.js"></script>
 <script>
     // Refresh dữ liệu báo cáo Số lượng Mặt hàng
     $('#refreshBaoCaoSanPham').click(function (event) {
         event.preventDefault();
 
-        $.ajax('/sephora/backends/ajax/baocao-tongsosp-ajax', {
+        $.ajax('/sephora.com/backends/ajax/baocao-tongsosp-ajax', {
             success: function (data) {
                 var dataObj = JSON.parse(data);
                 var htmlString = `<h1>${dataObj.SoLuong}</h1>`;
@@ -108,7 +108,7 @@ Thống kê dữ liệu
 
     // Refresh dữ liệu báo cáo Số lượng Khách hàng
     function getDataBaoCaoKhachHang() {
-        $.ajax('/sephora/backends/ajax/baocao-tongsokhachhang-ajax', {
+        $.ajax('/sephora.com/backends/ajax/baocao-tongsokhachhang-ajax', {
             success: function (data) {
                 var dataObj = JSON.parse(data);
                 var htmlString = `<h1>${dataObj.SoLuong}</h1>`;
@@ -128,7 +128,7 @@ Thống kê dữ liệu
 
     // Refresh dữ liệu báo cáo Số lượng Đơn hàng
     function getDataBaoCaoDonHang() {
-        $.ajax('/sephora/backends/ajax/baocao-tongsodonhang-ajax', {
+        $.ajax('/sephora.com/backends/ajax/baocao-tongsodonhang-ajax', {
             success: function (data) {
                 var dataObj = JSON.parse(data);
                 var htmlString = `<h1>${dataObj.SoLuong}</h1>`;
@@ -154,7 +154,7 @@ Thống kê dữ liệu
 
     function renderChartThongKeLoaiSanPham() {
         $.ajax({
-            url: '/sephora/backends/ajax/baocao-thongkeloaisanpham-ajax',
+            url: '/sephora.com/backends/ajax/baocao-thongkeloaisanpham-ajax',
             type: "GET",
             success: function (response) {
                 var data = JSON.parse(response);
@@ -207,7 +207,7 @@ Thống kê dữ liệu
 
     function renderChartThongKeTopSanPhamBanChayNhat() {
         $.ajax({
-            url: '/sephora/backends/ajax/baocao-thongketop3spbanchaynhat-ajax',
+            url: '/sephora.com/backends/ajax/baocao-thongketop3spbanchaynhat-ajax',
             type: "GET",
             success: function (response) {
                 var data = JSON.parse(response);
@@ -260,7 +260,7 @@ Thống kê dữ liệu
 
     function renderChartThongKeDoanhThu() {
         $.ajax({
-            url: '/sephora/backends/ajax/baocao-thongkedoanhthu-ajax',
+            url: '/sephora.com/backends/ajax/baocao-thongkedoanhthu-ajax',
             type: "GET",
             success: function (response) {
                 var data = JSON.parse(response);

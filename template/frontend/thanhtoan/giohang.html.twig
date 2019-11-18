@@ -53,9 +53,9 @@ Giỏ hàng
                         <td>{{ loop.index }}</td>
                         <td>
                             {% if sanpham.hinhdaidien %}
-                            <img src="/sephora/assets/uploads/{{ sanpham.hinhdaidien }}" class="hinhdaidien" />
+                            <img src="/sephora.com/assets/uploads/{{ sanpham.hinhdaidien }}" class="hinhdaidien" />
                             {% else %}
-                            <img src="/sephora/vendor/img/no_img.jpg" class="hinhdaidien" />
+                            <img src="/sephora.com/vendor/img/no_img.jpg" class="hinhdaidien" />
                             {% endif %}
                         </td>
                         <td>{{ sanpham.sp_ten }}</td>
@@ -76,9 +76,9 @@ Giỏ hàng
             <h2>Giỏ hàng rỗng!!!</h2>
             {% endif %}
 
-            <a href="/sephora/backends/pages/home.php" class="btn btn-warning btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Quay
+            <a href="/sephora.com/backends/pages/home.php" class="btn btn-dark btn-md"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Quay
                 về trang chủ</a>
-            <a href="/sephora/backends/thanhtoan/thanhtoan.php" class="btn btn-primary btn-md"><i class="fa fa-shopping-cart"
+            <a href="/sephora.com/backends/thanhtoan/thanhtoan.php" class="btn btn-primary btn-md"><i class="fa fa-shopping-cart"
                     aria-hidden="true"></i>&nbsp;Thanh toán</a>
         </div>
     </div>
@@ -88,15 +88,14 @@ Giỏ hàng
 
 {% block customscripts %}
 <script>
-    $('.btn-delete-sanpham').on('click', function () {
-        event.preventDefault();
-        var id = $(this).data('sp-ma');
-        console.log(id);
-        var dulieugoi = {
-            sp_ma: id
-        };
+    $(document).ready(function () {
+        function removeSanPhamVaoGioHang(id) {
+            var dulieugoi = {
+                sp_ma: id
+            };
+
         $.ajax({
-            url: '/sephora/backends/ajax/giohang-xoasp-ajax.php',
+            url: '/sephora.com/backends/ajax/giohang-xoasp-ajax',
             method: "POST",
             dataType: 'json',
             data: dulieugoi,
@@ -106,11 +105,20 @@ Giỏ hàng
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);
+
                 var htmlString = `<h1>Không thể xử lý</h1>`;
                 $('#thongbao').html(htmlString);
+                
                 // Hiện thông báo
                 $('.alert').removeClass('d-none').addClass('show');
             }
+        });
+    };
+    $('.btn-delete-sanpham').on('click', function () {
+            event.preventDefault();
+            var id = $(this).data('sp-ma');
+            console.log(id);
+            removeSanPhamVaoGioHang(id);
         });
     });
 </script>

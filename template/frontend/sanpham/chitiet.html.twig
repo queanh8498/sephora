@@ -47,7 +47,7 @@ Sản phẩm {{ sanpham.sp_ten }}
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
-        max-height: 300px;
+        max-height: 380px;
     }
 
     .preview-thumbnail.nav-tabs {
@@ -129,9 +129,10 @@ Sản phẩm {{ sanpham.sp_ten }}
         font-weight: bold;
     }
 
-    .checked,
+    .checked{color: #f0b617;}
+    
     .price span {
-        color: #ff9f1a;
+        color: #ca0c0c;
     }
 
     .product-title,
@@ -253,9 +254,9 @@ Sản phẩm {{ sanpham.sp_ten }}
     </div>
 
     <div class="card">
-        <div class="container-fliud">
+        <div class="container-fluid">
             <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post"
-                action="/sephora/frontend/giohang/themvaogiohang">
+                action="/sephora.com/frontend/giohang/themvaogiohang">
                 {% set hinhsanphamdautien = sanpham.danhsachhinhanh|first %}
                 <input type="hidden" name="sp_ma" id="sp_ma" value="{{ sanpham.sp_ma }}" />
                 <input type="hidden" name="sp_ten" id="sp_ten" value="{{ sanpham.sp_ten }}" />
@@ -270,7 +271,7 @@ Sản phẩm {{ sanpham.sp_ten }}
                             {% for hinhsanpham in sanpham.danhsachhinhanh %}
                             <div class="tab-pane {{ (hinhsanpham == hinhsanphamdautien) ? 'active' : '' }}"
                                 id="pic-{{ loop.index }}">
-                                <img src="/sephora/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" style="height: 370px"/>
+                                <img src="/sephora.com/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" style="width: 3900px"/>
                             </div>
                             {% endfor %}
                         </div>
@@ -278,7 +279,7 @@ Sản phẩm {{ sanpham.sp_ten }}
                             {% for hinhsanpham in sanpham.danhsachhinhanh %}
                             <li class="{{ (hinhsanpham == hinhsanphamdautien) ? 'active' : '' }}">
                                 <a data-target="#pic-{{ loop.index }}" data-toggle="tab">
-                                    <img src="/sephora/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" />
+                                    <img src="/sephora.com/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" />
                                 </a>
                             </li>
                             {% endfor %}
@@ -288,13 +289,13 @@ Sản phẩm {{ sanpham.sp_ten }}
                         <div class="preview-pic tab-content">
                             <div class="tab-pane active"
                                 id="pic-1">
-                                <img src="\sephora\vendor\img\no_img.jpg" />
+                                <img src="\sephora.com\vendor\img\no_img.jpg" />
                             </div>
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
                             <li class="active">
                                 <a data-target="#pic-1" data-toggle="tab">
-                                        <img src="\sephora\vendor\img\no_img.jpg" />
+                                        <img src="\sephora.com\vendor\img\no_img.jpg" />
                                     </a>
                             </li>
                         </ul>
@@ -310,24 +311,13 @@ Sản phẩm {{ sanpham.sp_ten }}
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
                             </div>
-                            <span class="review-no">999 reviews</span>
                         </div>
-                        <p class="product-description">{{ sanpham.sp_mota_ngan }}</p>
+                        <p class="product-description">{{ sanpham.sp_mota }}</p>
                         <small class="text-muted">Giá cũ: <s><span>{{ sanpham.sp_gia_formated }}</span></s></small>
                         <h4 class="price">Giá hiện tại: <span>{{ sanpham.sp_gia_formated }}</span></h4>
                         <p class="vote"><strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo <strong>Uy
                                 tín</strong>!</p>
-                        <h5 class="sizes">sizes:
-                            <span class="size" data-toggle="tooltip" title="cỡ Nhỏ">s</span>
-                            <span class="size" data-toggle="tooltip" title="cỡ Trung bình">m</span>
-                            <span class="size" data-toggle="tooltip" title="cỡ Lớn">l</span>
-                            <span class="size" data-toggle="tooltip" title="cỡ Đại">xl</span>
-                        </h5>
-                        <h5 class="colors">colors:
-                            <span class="color orange not-available" data-toggle="tooltip" title="Hết hàng"></span>
-                            <span class="color green"></span>
-                            <span class="color blue"></span>
-                        </h5>
+            
                         <div class="form-group">
                             <label for="soluong">Số lượng đặt mua:</label>
                             <input type="number" class="form-control" id="soluong" name="soluong">
@@ -342,16 +332,6 @@ Sản phẩm {{ sanpham.sp_ten }}
     </div>
 </div>
 
-<div class="card">
-    <div class="container-fluid">
-        <h3>Thông tin chi tiết về Sản phẩm</h3>
-        <div class="row">
-            <div class="col">
-                {{ sanpham.sp_mota_chitiet }}
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 {% endblock %}
 {# End Nội dung trong block content #}
@@ -369,14 +349,14 @@ Sản phẩm {{ sanpham.sp_ten }}
         console.log((dulieugoi));
 
         $.ajax({
-            url: '/sephora/backends/ajax/giohang-themsp-ajax',
+            url: '/sephora.com/backends/ajax/giohang-themsp-ajax',
             method: "POST",
             dataType: 'json',
             data: dulieugoi,
             success: function (data) {
                 console.log(data);
                 var htmlString =
-                    `Sản phẩm đã được thêm vào Giỏ hàng. <a href="/sephora/backends/thanhtoan/giohang">Xem Giỏ hàng</a>.`;
+                    `Sản phẩm đã được thêm vào Giỏ hàng. <a href="/sephora.com/backends/thanhtoan/giohang">Xem Giỏ hàng</a>.`;
                 $('#thongbao').html(htmlString);
 
                 // Hiện thông báo

@@ -12,11 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Dumping database structure for salomon
-CREATE DATABASE IF NOT EXISTS `salomon` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_vietnamese_ci */;
-USE `salomon`;
+-- Dumping database structure for sephora
+CREATE DATABASE IF NOT EXISTS `sephora` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_vietnamese_ci */;
+USE `sephora`;
 
--- Dumping structure for table salomon.dondathang
+-- Dumping structure for table sephora.dondathang
 CREATE TABLE IF NOT EXISTS `dondathang` (
   `dh_ma` int(11) NOT NULL AUTO_INCREMENT,
   `dh_ngaylap` datetime NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `dondathang` (
   CONSTRAINT `dondathang_khachhang` FOREIGN KEY (`kh_tendangnhap`) REFERENCES `khachhang` (`kh_tendangnhap`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table salomon.dondathang: ~11 rows (approximately)
+-- Dumping data for table sephora.dondathang: ~11 rows (approximately)
 /*!40000 ALTER TABLE `dondathang` DISABLE KEYS */;
 INSERT INTO `dondathang` (`dh_ma`, `dh_ngaylap`, `dh_ngaygiao`, `dh_noigiao`, `dh_trangthaithanhtoan`, `httt_ma`, `kh_tendangnhap`) VALUES
 	(1, '2013-02-21 16:45:44', '2013-02-01 00:00:00', 'Can Tho', 0, 1, 'vdduy'),
@@ -48,7 +48,7 @@ INSERT INTO `dondathang` (`dh_ma`, `dh_ngaylap`, `dh_ngaygiao`, `dh_noigiao`, `d
 	(13, '2019-09-30 13:09:40', NULL, NULL, 0, 3, 'tt');
 /*!40000 ALTER TABLE `dondathang` ENABLE KEYS */;
 
--- Dumping structure for table salomon.hinhsanpham
+-- Dumping structure for table sephora.hinhsanpham
 CREATE TABLE IF NOT EXISTS `hinhsanpham` (
   `hsp_ma` int(11) NOT NULL AUTO_INCREMENT,
   `hsp_tentaptin` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `hinhsanpham` (
   CONSTRAINT `fk_hinhsanpham_sanpham1` FOREIGN KEY (`sp_ma`) REFERENCES `sanpham` (`sp_ma`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table salomon.hinhsanpham: ~14 rows (approximately)
+-- Dumping data for table sephora.hinhsanpham: ~14 rows (approximately)
 /*!40000 ALTER TABLE `hinhsanpham` DISABLE KEYS */;
 INSERT INTO `hinhsanpham` (`hsp_ma`, `hsp_tentaptin`, `sp_ma`) VALUES
 	(50, 'innisfree-jeju-cherry-blossom-jelly-cream-15-644x580.jpg', 1),
@@ -77,14 +77,14 @@ INSERT INTO `hinhsanpham` (`hsp_ma`, `hsp_tentaptin`, `sp_ma`) VALUES
 	(65, '650x650.jpg', 6);
 /*!40000 ALTER TABLE `hinhsanpham` ENABLE KEYS */;
 
--- Dumping structure for table salomon.hinhthucthanhtoan
+-- Dumping structure for table sephora.hinhthucthanhtoan
 CREATE TABLE IF NOT EXISTS `hinhthucthanhtoan` (
   `httt_ma` int(11) NOT NULL AUTO_INCREMENT,
   `httt_ten` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`httt_ma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table salomon.hinhthucthanhtoan: ~3 rows (approximately)
+-- Dumping data for table sephora.hinhthucthanhtoan: ~3 rows (approximately)
 /*!40000 ALTER TABLE `hinhthucthanhtoan` DISABLE KEYS */;
 INSERT INTO `hinhthucthanhtoan` (`httt_ma`, `httt_ten`) VALUES
 	(1, 'Tiền mặt'),
@@ -92,7 +92,7 @@ INSERT INTO `hinhthucthanhtoan` (`httt_ma`, `httt_ten`) VALUES
 	(3, 'Paypal');
 /*!40000 ALTER TABLE `hinhthucthanhtoan` ENABLE KEYS */;
 
--- Dumping structure for table salomon.khachhang
+-- Dumping structure for table sephora.khachhang
 CREATE TABLE IF NOT EXISTS `khachhang` (
   `kh_tendangnhap` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `kh_matkhau` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -111,12 +111,12 @@ CREATE TABLE IF NOT EXISTS `khachhang` (
   PRIMARY KEY (`kh_tendangnhap`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table salomon.khachhang: ~15 rows (approximately)
+-- Dumping data for table sephora.khachhang: ~15 rows (approximately)
 /*!40000 ALTER TABLE `khachhang` DISABLE KEYS */;
 INSERT INTO `khachhang` (`kh_tendangnhap`, `kh_matkhau`, `kh_ten`, `kh_gioitinh`, `kh_diachi`, `kh_dienthoai`, `kh_email`, `kh_ngaysinh`, `kh_thangsinh`, `kh_namsinh`, `kh_cmnd`, `kh_makichhoat`, `kh_trangthai`, `kh_quantri`) VALUES
 	('a', '123456', 'anh', 0, 'a', '1', 'user_queanh', 1, 1, 1998, '', '1', 1, 1),
 	('aaa', '637d1f5c6e6d1be22ed907eb3d223d858ca396d8', 'anh', 0, 'a', 'q', 'user_queanh', 1, 5, 1111, '1', '1', 0, 0),
-	('admin', '123', 'Quản trị', 1, 'Số 01 - Lý Tự Trọng - Cần Thơ', '0912.123.567', 'admin@salomon.vn', 2, 2, 1985, NULL, NULL, 1, 1),
+	('admin', '123', 'Quản trị', 1, 'Số 01 - Lý Tự Trọng - Cần Thơ', '0912.123.567', 'admin@sephora.vn', 2, 2, 1985, NULL, NULL, 1, 1),
 	('anhne', '356a192b7913b04c54574d18c28d46e6395428ab', 'queanh', 0, 'a', 'q', 'user_queanh', 5, 1, 1998, '1', '4', 0, 0),
 	('b', '1', 'e', 0, 's', '2', 'user_', 1, 1, 1, '1', '4', 0, 0),
 	('dinhduyvo', 'fcea920f7412b5da7be0cf42b8c93759', 'Vo Dinh Duy', 0, 'Can Tho', '07103.273.34433', 'vdduy@ctu.edu.vn', 2, 2, 1985, '', '', 1, 0),
@@ -132,7 +132,7 @@ INSERT INTO `khachhang` (`kh_tendangnhap`, `kh_matkhau`, `kh_ten`, `kh_gioitinh`
 	('vdduy', 'fcea920f7412b5da7be0cf42b8c93759', 'Vo Dinh Duy', 0, 'Can Tho', '0975107705', 'vdduy@ctu.edu.vn', 2, 2, 1985, '', 'â€zcnl82qbuj', 1, 0);
 /*!40000 ALTER TABLE `khachhang` ENABLE KEYS */;
 
--- Dumping structure for table salomon.loaisanpham
+-- Dumping structure for table sephora.loaisanpham
 CREATE TABLE IF NOT EXISTS `loaisanpham` (
   `lsp_ma` int(11) NOT NULL AUTO_INCREMENT,
   `lsp_ten` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `loaisanpham` (
   PRIMARY KEY (`lsp_ma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table salomon.loaisanpham: ~6 rows (approximately)
+-- Dumping data for table sephora.loaisanpham: ~6 rows (approximately)
 /*!40000 ALTER TABLE `loaisanpham` DISABLE KEYS */;
 INSERT INTO `loaisanpham` (`lsp_ma`, `lsp_ten`, `lsp_mota`) VALUES
 	(1, 'Mask', ''),
@@ -151,14 +151,14 @@ INSERT INTO `loaisanpham` (`lsp_ma`, `lsp_ten`, `lsp_mota`) VALUES
 	(11, 'Lotion', '');
 /*!40000 ALTER TABLE `loaisanpham` ENABLE KEYS */;
 
--- Dumping structure for table salomon.nhasanxuat
+-- Dumping structure for table sephora.nhasanxuat
 CREATE TABLE IF NOT EXISTS `nhasanxuat` (
   `nsx_ma` int(11) NOT NULL AUTO_INCREMENT,
   `nsx_ten` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`nsx_ma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table salomon.nhasanxuat: ~4 rows (approximately)
+-- Dumping data for table sephora.nhasanxuat: ~4 rows (approximately)
 /*!40000 ALTER TABLE `nhasanxuat` DISABLE KEYS */;
 INSERT INTO `nhasanxuat` (`nsx_ma`, `nsx_ten`) VALUES
 	(1, 'Innisfree'),
@@ -167,7 +167,7 @@ INSERT INTO `nhasanxuat` (`nsx_ma`, `nsx_ten`) VALUES
 	(4, 'Charlie');
 /*!40000 ALTER TABLE `nhasanxuat` ENABLE KEYS */;
 
--- Dumping structure for table salomon.sanpham
+-- Dumping structure for table sephora.sanpham
 CREATE TABLE IF NOT EXISTS `sanpham` (
   `sp_ma` int(11) NOT NULL AUTO_INCREMENT,
   `sp_ten` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `sanpham` (
   CONSTRAINT `sanpham_nhasanxuat` FOREIGN KEY (`nsx_ma`) REFERENCES `nhasanxuat` (`nsx_ma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table salomon.sanpham: ~12 rows (approximately)
+-- Dumping data for table sephora.sanpham: ~12 rows (approximately)
 /*!40000 ALTER TABLE `sanpham` DISABLE KEYS */;
 INSERT INTO `sanpham` (`sp_ma`, `sp_ten`, `sp_gia`, `sp_giacu`, `sp_mota_ngan`, `sp_mota_chitiet`, `sp_ngaycapnhat`, `sp_soluong`, `lsp_ma`, `nsx_ma`, `km_ma`) VALUES
 	(1, 'Jeju Blossom Cream', 420000.00, 450000.00, 'JeJu Tone-Up', '', '2012-12-22 11:20:30', 17, 3, 1, NULL),
@@ -206,7 +206,7 @@ INSERT INTO `sanpham` (`sp_ma`, `sp_ten`, `sp_gia`, `sp_giacu`, `sp_mota_ngan`, 
 	(12, 'MORO Smoothing Lotion', 420000.00, 322000.00, 'Moisturizing', NULL, '0000-00-00 00:00:00', 25, 11, 4, NULL);
 /*!40000 ALTER TABLE `sanpham` ENABLE KEYS */;
 
--- Dumping structure for table salomon.sanpham_dondathang
+-- Dumping structure for table sephora.sanpham_dondathang
 CREATE TABLE IF NOT EXISTS `sanpham_dondathang` (
   `sp_ma` int(11) NOT NULL,
   `dh_ma` int(11) NOT NULL,
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `sanpham_dondathang` (
   CONSTRAINT `sanpham_donhang_sanpham` FOREIGN KEY (`sp_ma`) REFERENCES `sanpham` (`sp_ma`) ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table salomon.sanpham_dondathang: ~4 rows (approximately)
+-- Dumping data for table sephora.sanpham_dondathang: ~4 rows (approximately)
 /*!40000 ALTER TABLE `sanpham_dondathang` DISABLE KEYS */;
 INSERT INTO `sanpham_dondathang` (`sp_ma`, `dh_ma`, `sp_dh_soluong`, `sp_dh_dongia`) VALUES
 	(1, 7, 4, 12000000.00),

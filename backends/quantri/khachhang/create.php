@@ -15,9 +15,7 @@ if(isset($_POST['submitSave']))
     $kh_ten = $_POST['kh_ten'];
     $kh_gioitinh = $_POST['kh_gioitinh'];
     $kh_diachi = $_POST['kh_diachi'];
-    $kh_email = $_POST['kh_email'];
     $kh_dienthoai = $_POST['kh_dienthoai'];
-    $kh_cmnd = $_POST['kh_cmnd'];
     $kh_trangthai = $_POST['kh_trangthai'];
     $kh_quantri = isset($_POST['kh_quantri']) ? $_POST['kh_quantri'] : '0';
 
@@ -88,8 +86,8 @@ if(isset($_POST['submitSave']))
     }
     else {
     
-    $sql = "INSERT INTO `khachhang`(kh_tendangnhap, kh_matkhau, kh_ten, kh_gioitinh, kh_diachi, kh_email, kh_dienthoai,kh_cmnd,kh_trangthai,kh_quantri) VALUES
-     ('$kh_tendangnhap', '$kh_matkhau', '$kh_ten', '$kh_gioitinh', '$kh_diachi', '$kh_email', '$kh_dienthoai','$kh_cmnd',$kh_trangthai,$kh_quantri);";
+    $sql = "INSERT INTO `khachhang`(kh_tendangnhap, kh_matkhau, kh_ten, kh_gioitinh, kh_diachi, kh_dienthoai, kh_trangthai ,kh_quantri) VALUES
+     ('$kh_tendangnhap', '$kh_matkhau', '$kh_ten', '$kh_gioitinh', '$kh_diachi','$kh_dienthoai',$kh_trangthai,$kh_quantri);";
     mysqli_query($conn,$sql);
     //print_r($sql);
     mysqli_close($conn);

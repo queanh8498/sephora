@@ -11,7 +11,7 @@ var $chartOfobjChartThongKeDoanhThu = document.getElementById("chartOfobjChartTh
 $(document).ready(function() {
     // Vẽ biểu đồ Loại sản phẩm
     $.ajax({
-        url: '/sephora/backends/ajax/baocao-thongkeloaisanpham-ajax.php',
+        url: '/sephora.com/backends/ajax/baocao-thongkeloaisanpham-ajax.php',
         type: "GET",
         success: function (response) {
             var data = JSON.parse(response);
@@ -26,7 +26,6 @@ $(document).ready(function() {
                 $objChartThongKeLoaiSanPham.destroy();
             }
             $objChartThongKeLoaiSanPham = new Chart($chartOfobjChartThongKeLoaiSanPham, {
-                // Kiểu biểu đồ muốn vẽ. Các bạn xem thêm trên trang ChartJS
                 type: "bar",
                 data: {
                     labels: myLabels,
@@ -37,7 +36,7 @@ $(document).ready(function() {
                         borderWidth: 1
                     }]
                 },
-                // Cấu hình dành cho biểu đồ của ChartJS
+                // Cấu hình 
                 options: {
                     legend: {
                         display: false
@@ -56,7 +55,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-        url: '/sephora/backends/ajax/baocao-thongketop3spbanchaynhat-ajax.php',
+        url: '/sephora.com/backends/ajax/baocao-thongketop3spbanchaynhat-ajax.php',
         type: "GET",
         success: function (response) {
             var data = JSON.parse(response);
@@ -71,7 +70,6 @@ $(document).ready(function() {
                 $objChartThongKeTopSPBanChay.destroy();
             }
             $objChartThongKeTopSPBanChay = new Chart($chartOfobjChartThongKeTopSPBanChay, {
-                // Kiểu biểu đồ muốn vẽ. Các bạn xem thêm trên trang ChartJS
                 type: "horizontalBar",
                 data: {
                     labels: myLabels,
@@ -82,7 +80,7 @@ $(document).ready(function() {
                         borderWidth: 1
                     }]
                 },
-                // Cấu hình dành cho biểu đồ của ChartJS
+                // Cấu hình 
                 options: {
                     legend: {
                         display: false
@@ -102,7 +100,7 @@ $(document).ready(function() {
 
     // Vẽ biểu đồ doanh thu
     $.ajax({
-        url: '/sephora/backends/ajax/baocao-thongkedoanhthu-ajax.php',
+        url: '/sephora.com/backends/ajax/baocao-thongkedoanhthu-ajax.php',
         type: "GET",
         success: function (response) {
             var data = JSON.parse(response);
@@ -117,7 +115,6 @@ $(document).ready(function() {
                 $objChartThongKeDoanhThu.destroy();
             }
             $objChartThongKeDoanhThu = new Chart($chartOfobjChartThongKeDoanhThu, {
-                // Kiểu biểu đồ muốn vẽ. Các bạn xem thêm trên trang ChartJS
                 type: "line",
                 data: {
                     labels: myLabels,
@@ -128,7 +125,7 @@ $(document).ready(function() {
                         borderWidth: 1
                     }]
                 },
-                // Cấu hình dành cho biểu đồ của ChartJS
+                // Cấu hình 
                 options: {
                     legend: {
                         display: false

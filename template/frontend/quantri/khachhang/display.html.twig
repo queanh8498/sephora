@@ -16,38 +16,33 @@ Loại Sản phẩm
 {# Nội dung trong block content #}
 
 {% block content %}
-<br>
-<a href="create.php" class="btn btn-info">Thêm mới</a>
+
+<a href="create.php" class="btn btn-warning">Thêm mới</a>
+<br><br>
 <table class="table table-bodered table-hover " style="text-align:center;">
 <tr>
     <th>Tên đăng nhập</th>
-    <th>Mật khẩu</th>
     <th>Tên KH:</th>
     <th>Giới tính KH:</th>
     <th>Địa chỉ KH:</th>
-    <th>Email KH:</th>
     <th>SĐT KH:</th>
-    <th>CMND KH:</th>
     <th>Trạng thái KH:</th>
     <th>Quyền quản trị </th>
-    <th> Chức năng  </th>
+    <th> Chức năng </th>
     
 </tr>
 
 {% for KH in danhsachKH %}
     <tr>
         <td>{{ KH.kh_tendangnhap }}</td>
-        <td>{{ KH.kh_matkhau }}</td>
         <td>{{ KH.kh_ten }}</td>
         <td>{{ KH.kh_gioitinh }}</td>
         <td>{{ KH.kh_diachi }}</td>
-        <td>{{ KH.kh_email }}</td>
         <td>{{ KH.kh_dienthoai }}</td>
-        <td>{{ KH.kh_cmnd }}</td>
         <td>{{ KH.kh_trangthai }}</td>
         <td>{{ KH.kh_quantri }}</td>
         <td>
-        <a href="edit?kh_tendangnhap={{ KH.kh_tendangnhap }}" class="btn btn-warning">
+        <a href="edit?kh_tendangnhap={{ KH.kh_tendangnhap }}" class="btn btn-dark">
                 <span data-feather="edit"></span> Sửa
         </a>
         </td>

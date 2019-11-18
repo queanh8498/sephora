@@ -17,8 +17,8 @@ $(document).ready(function(){
                 'Đã xóa !',
                 'Thành công !'
               )
-            ///Điều hướng
-            window.location.href="/sephora/loaisp/delete.php?lsp_ma="+lsp_ma;
+            
+            window.location.href="/sephora.com/loaisp/delete.php?lsp_ma="+lsp_ma;
 
             }
           })

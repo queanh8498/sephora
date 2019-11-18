@@ -42,7 +42,7 @@ if(isset($_POST['submitSave']))
     $sp_ten = $_POST['sp_ten'];
     $sp_gia = $_POST['sp_gia'];
     $sp_giacu = $_POST['sp_giacu'];
-    $sp_mota_ngan = $_POST['sp_mota_ngan'];
+    $sp_mota = $_POST['sp_mota'];
     $sp_soluong = $_POST['sp_soluong'];
     $lsp_ma = $_POST['lsp_ma'];
     $nsx_ma = $_POST['nsx_ma'];
@@ -96,12 +96,12 @@ if(isset($_POST['submitSave']))
     }
     else {
 
-    $sql = "INSERT INTO `sanpham`(sp_ten, sp_gia, sp_giacu, sp_mota_ngan, sp_soluong, lsp_ma, nsx_ma) VALUES ('$sp_ten', $sp_gia, $sp_giacu, '$sp_mota_ngan', $sp_soluong, $lsp_ma, $nsx_ma);";
+    $sql = "INSERT INTO `sanpham`(sp_ten, sp_gia, sp_giacu, sp_mota, sp_soluong, lsp_ma, nsx_ma) VALUES ('$sp_ten', $sp_gia, $sp_giacu, '$sp_mota', $sp_soluong, $lsp_ma, $nsx_ma);";
     mysqli_query($conn,$sql);
     //print_r($sql);
     mysqli_close($conn);
     
-   header("location:/sephora/frontend/quantri/sanpham/display.php");
+   header("location:/sephora.com/backends/quantri/sanpham/display.php");
 }
 }
     echo $twig->render('frontend/quantri/sanpham/create.html.twig',[

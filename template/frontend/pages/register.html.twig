@@ -74,7 +74,7 @@
 
 </style>
 
-<form name="frmDangKy" id="frmDangKy" method="post" action="/sephora/backends/pages/register.php">
+<form name="frmDangKy" id="frmDangKy" method="post" action="/sephora.com/backends/pages/register.php">
     <div class="container-fluid">
         {% if message %}
         <div id="thongbao" class="alert alert-danger face" role="alert">
@@ -89,7 +89,7 @@
             <div class="login-sec">                   
                 <h2 class="text-center">Đăng ký</h2><form class="register-form">
             <div class="form-group">
-                <label >ID</label><input type="text" class="form-control" name="kh_tendangnhap" id="kh_tendangnhap" >  
+                <label >Tên Đăng nhập</label><input type="text" class="form-control" name="kh_tendangnhap" id="kh_tendangnhap" weight:500px>  
             </div>
             <div class="form-group">
                 <label>Password</label><input type="password" class="form-control" name="kh_matkhau" id="kh_matkhau" >
@@ -110,21 +110,6 @@
             </div>
             <div class="form-group">
                 <label>SDT:</label><input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai" >
-            </div>
-            <div class="form-group">
-                <label>Email:</label><input type="text" class="form-control" name="kh_email" id="kh_email" >
-            </div>
-            <div class="form-group">
-                <label>Ngày sinh:</label><input type="text" class="form-control" name="kh_ngaysinh" id="kh_ngaysinh" >
-            </div>
-            <div class="form-group">
-                <label>Tháng sinh:</label><input type="text" class="form-control" name="kh_thangsinh" id="kh_thangsinh" >
-            </div>
-            <div class="form-group">
-                <label>Năm sinh</label><input type="text" class="form-control" name="kh_namsinh" id="kh_namsinh" >
-            </div>
-            <div class="form-group">
-                    <label>CMND:</label><input type="text" class="form-control" name="kh_cmnd" id="kh_cmnd" >
             </div>
             <div class="form-check">
                 <button type="submit" class="btn btn-regist float-center" name="btnDangKy">Submit</button>

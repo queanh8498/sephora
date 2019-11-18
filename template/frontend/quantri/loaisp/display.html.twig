@@ -17,7 +17,8 @@ Loại Sản phẩm
 
 {% block content %}
 <br>
-<a href="create.php" class="btn btn-info">Thêm mới</a>
+<a href="create.php" class="btn btn-warning">Thêm mới</a>
+<br><br>
 <table class="table table-bodered table-hover " style="text-align:center;">
 <tr>
     <th>Mã LSP </th>
@@ -34,7 +35,7 @@ Loại Sản phẩm
         <td>{{ LSP.lsp_ten }}</td>
         <td>{{ LSP.lsp_mota }}</td>
         <td>
-        <a href="edit?lsp_ma={{ LSP.lsp_ma }}" class="btn btn-warning">
+        <a href="edit?lsp_ma={{ LSP.lsp_ma }}" class="btn btn-dark">
                 <span data-feather="edit"></span> Sửa
         </a>
 

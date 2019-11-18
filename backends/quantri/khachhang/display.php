@@ -25,8 +25,6 @@ EOT;
         'kh_gioitinh' => $row['kh_gioitinh'],
         'kh_diachi' => $row['kh_diachi'],
         'kh_dienthoai' => $row['kh_dienthoai'],
-        'kh_email' => $row['kh_email'],
-        'kh_cmnd' => $row['kh_cmnd'],
         'kh_trangthai' => $row['kh_trangthai'],
         'kh_quantri' => $row['kh_quantri'],
     );
